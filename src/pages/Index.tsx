@@ -42,18 +42,24 @@ const Index = () => {
   return (
     <div className="pt-16">
       {/* Banner */}
-      <section className="bg-crow-dark text-crow-text min-h-[80vh] flex items-center">
-        <div className="container mx-auto px-4">
+      <section 
+        className="bg-crow-dark text-crow-text min-h-[80vh] flex items-center bg-cover bg-center bg-no-repeat relative"
+        style={{
+          backgroundImage: 'url("https://i.imgur.com/Zz1JpiE.jpeg")',
+        }}
+      >
+        <div className="absolute inset-0 bg-crow-dark/70"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl animate-fade-in">
-            <h1 className="text-5xl font-bold mb-6">
+            <h1 className="text-5xl font-title mb-6">
               Damos vida a tus ideas con <span className="text-crow-light">diseño e ilustración</span>
             </h1>
-            <p className="text-xl mb-8 text-crow-medium">
+            <p className="text-xl mb-8 text-crow-medium font-body">
               Creamos diseños únicos e ilustraciones cautivadoras que cuentan tu historia
             </p>
             <Link
               to="/contacto"
-              className="inline-flex items-center gap-2 bg-crow-primary hover:bg-crow-medium px-6 py-3 rounded-lg transition-colors"
+              className="inline-flex items-center gap-2 bg-crow-primary hover:bg-crow-medium px-6 py-3 rounded-lg transition-colors font-body"
             >
               Iniciemos un proyecto
               <ArrowRight className="w-5 h-5" />
@@ -65,7 +71,7 @@ const Index = () => {
       {/* Proyectos Destacados */}
       <section className="py-20 bg-gradient-to-b from-crow-dark to-crow-primary">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-crow-text mb-12">Proyectos Destacados</h2>
+          <h2 className="text-3xl font-title text-crow-text mb-12">Proyectos Destacados</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredProjects.map((project, index) => (
               <div
@@ -78,8 +84,8 @@ const Index = () => {
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-crow-light mb-2">{project.title}</h3>
-                  <p className="text-crow-text">{project.description}</p>
+                  <h3 className="text-xl font-title text-crow-light mb-2">{project.title}</h3>
+                  <p className="text-crow-text font-body">{project.description}</p>
                 </div>
               </div>
             ))}
@@ -90,7 +96,7 @@ const Index = () => {
       {/* Servicios */}
       <section className="py-20 bg-crow-primary">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-crow-text mb-12">Nuestros Servicios</h2>
+          <h2 className="text-3xl font-title text-crow-text mb-12">Nuestros Servicios</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div
@@ -100,8 +106,8 @@ const Index = () => {
                 <div className="text-crow-light mb-4 flex justify-center">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold text-crow-light mb-2">{service.title}</h3>
-                <p className="text-crow-text">{service.description}</p>
+                <h3 className="text-xl font-title text-crow-light mb-2">{service.title}</h3>
+                <p className="text-crow-text font-body">{service.description}</p>
               </div>
             ))}
           </div>

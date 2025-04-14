@@ -19,6 +19,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        title: ['Rhoza One', 'serif'],
+        body: ['Josefin Sans', 'sans-serif'],
+      },
       colors: {
         crow: {
           dark: '#2A1B3D',
