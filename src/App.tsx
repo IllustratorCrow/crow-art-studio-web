@@ -10,6 +10,10 @@ import Projects from "./pages/Projects";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import DesignService from "./pages/services/DesignService";
+import IllustrationService from "./pages/services/IllustrationService";
+import ProductService from "./pages/services/ProductService";
+import EditorialService from "./pages/services/EditorialService";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +26,10 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/proyectos" element={<Projects />} />
           <Route path="/servicios" element={<Services />} />
+          <Route path="/servicios/diseno-grafico" element={<DesignService />} />
+          <Route path="/servicios/ilustracion" element={<IllustrationService />} />
+          <Route path="/servicios/productos" element={<ProductService />} />
+          <Route path="/servicios/editorial" element={<EditorialService />} />
           <Route path="/contacto" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
