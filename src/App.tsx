@@ -14,6 +14,8 @@ import DesignService from "./pages/services/DesignService";
 import IllustrationService from "./pages/services/IllustrationService";
 import ProductService from "./pages/services/ProductService";
 import EditorialService from "./pages/services/EditorialService";
+import MaresCreativos from "./pages/projects/MaresCreativos";
+import VidaBesaya from "./pages/projects/VidaBesaya";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +27,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/proyectos" element={<Projects />} />
+          <Route path="/proyectos/mares-creativos" element={<MaresCreativos />} />
+          <Route path="/proyectos/vida-besaya" element={<VidaBesaya />} />
           <Route path="/servicios" element={<Services />} />
           <Route path="/servicios/diseno-grafico" element={<DesignService />} />
           <Route path="/servicios/ilustracion" element={<IllustrationService />} />

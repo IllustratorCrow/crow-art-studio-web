@@ -1,6 +1,13 @@
 
 import { Link, useLocation } from "react-router-dom";
 import { Bird } from "lucide-react";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 const Navbar = () => {
   const location = useLocation();
@@ -24,18 +31,62 @@ const Navbar = () => {
             >
               Inicio
             </Link>
-            <Link 
-              to="/proyectos" 
-              className={`${isActive("/proyectos")} hover:text-crow-light transition-colors`}
-            >
-              Proyectos
-            </Link>
-            <Link 
-              to="/servicios" 
-              className={`${isActive("/servicios")} hover:text-crow-light transition-colors`}
-            >
-              Servicios
-            </Link>
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className={isActive("/proyectos")}>
+                    Proyectos
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="w-48 p-2">
+                      <li>
+                        <Link to="/proyectos/mares-creativos" className="block px-4 py-2 hover:bg-crow-dark/10 rounded-md">
+                          Mares Creativos
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/proyectos/vida-besaya" className="block px-4 py-2 hover:bg-crow-dark/10 rounded-md">
+                          La Vida del Besaya
+                        </Link>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className={isActive("/servicios")}>
+                    Servicios
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="w-48 p-2">
+                      <li>
+                        <Link to="/servicios/diseno-grafico" className="block px-4 py-2 hover:bg-crow-dark/10 rounded-md">
+                          Diseño Gráfico
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/servicios/ilustracion" className="block px-4 py-2 hover:bg-crow-dark/10 rounded-md">
+                          Ilustración
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/servicios/productos" className="block px-4 py-2 hover:bg-crow-dark/10 rounded-md">
+                          Diseño de Productos
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/servicios/editorial" className="block px-4 py-2 hover:bg-crow-dark/10 rounded-md">
+                          Servicios Editoriales
+                        </Link>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
             <Link 
               to="/contacto" 
               className={`${isActive("/contacto")} hover:text-crow-light transition-colors`}

@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { ArrowRight, Brush, PaintBucket, Palette, Package, BookOpen } from "lucide-react";
 import {
@@ -12,19 +11,16 @@ import {
 const Index = () => {
   const featuredProjects = [
     {
-      title: "Diseño Editorial",
-      image: "public/lovable-uploads/18f79205-6f9f-4a6c-acb3-5f62877ab3aa.png",
-      description: "Diseño de libros y revistas"
+      title: "Mares Creativos",
+      image: "https://i.imgur.com/pgCqphb.jpeg",
+      description: "Diseño de productos",
+      path: "/proyectos/mares-creativos"
     },
     {
-      title: "Ilustración Digital",
-      image: "public/lovable-uploads/18f79205-6f9f-4a6c-acb3-5f62877ab3aa.png",
-      description: "Arte conceptual y personajes"
-    },
-    {
-      title: "Branding",
-      image: "public/lovable-uploads/18f79205-6f9f-4a6c-acb3-5f62877ab3aa.png",
-      description: "Identidad visual corporativa"
+      title: "La Vida del Besaya",
+      image: "https://i.imgur.com/SLAscDB.jpeg",
+      description: "Paneles e Infografías",
+      path: "/proyectos/vida-besaya"
     }
   ];
 
@@ -93,13 +89,15 @@ const Index = () => {
               {featuredProjects.map((project, index) => (
                 <CarouselItem key={index}>
                   <div className="bg-crow-dark/50 backdrop-blur-sm rounded-lg overflow-hidden p-6">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-64 object-cover rounded-lg mb-6"
-                    />
-                    <h3 className="text-xl font-title text-crow-light mb-2">{project.title}</h3>
-                    <p className="text-crow-text font-body">{project.description}</p>
+                    <Link to={project.path}>
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-64 object-cover rounded-lg mb-6"
+                      />
+                      <h3 className="text-xl font-title text-crow-light mb-2">{project.title}</h3>
+                      <p className="text-crow-text font-body">{project.description}</p>
+                    </Link>
                   </div>
                 </CarouselItem>
               ))}
