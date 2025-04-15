@@ -24,7 +24,7 @@ const Navbar = () => {
             <Bird className="w-8 h-8 text-crow-light" />
             Ilustrator <span className="text-crow-light">Crow</span>
           </Link>
-          <div className="flex flex-wrap gap-6 md:gap-8 font-body">
+          <div className="flex flex-wrap items-center gap-6 md:gap-8 font-body">
             <Link 
               to="/" 
               className={`${isActive("/")} hover:text-crow-light transition-colors`}
@@ -34,7 +34,7 @@ const Navbar = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className={`${isActive("/proyectos")} hover:text-crow-light transition-colors bg-transparent hover:bg-transparent`}>
+                  <NavigationMenuTrigger className={`${isActive("/proyectos")} hover:text-crow-light transition-colors bg-transparent hover:bg-transparent p-0 h-auto`}>
                     Proyectos
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -57,7 +57,7 @@ const Navbar = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className={`${isActive("/servicios")} hover:text-crow-light transition-colors bg-transparent hover:bg-transparent`}>
+                  <NavigationMenuTrigger className={`${isActive("/servicios")} hover:text-crow-light transition-colors bg-transparent hover:bg-transparent p-0 h-auto`}>
                     Servicios
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
