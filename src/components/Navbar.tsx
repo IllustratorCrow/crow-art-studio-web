@@ -34,7 +34,7 @@ const Navbar = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className={isActive("/proyectos")}>
+                  <NavigationMenuTrigger className={`${isActive("/proyectos")} hover:text-crow-light transition-colors bg-transparent hover:bg-transparent`}>
                     Proyectos
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -57,7 +57,7 @@ const Navbar = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className={isActive("/servicios")}>
+                  <NavigationMenuTrigger className={`${isActive("/servicios")} hover:text-crow-light transition-colors bg-transparent hover:bg-transparent`}>
                     Servicios
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>

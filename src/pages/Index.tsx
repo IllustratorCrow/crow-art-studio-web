@@ -90,11 +90,13 @@ const Index = () => {
                 <CarouselItem key={index}>
                   <div className="bg-crow-dark/50 backdrop-blur-sm rounded-lg overflow-hidden p-6">
                     <Link to={project.path}>
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-64 object-cover rounded-lg mb-6"
-                      />
+                      <div className="relative w-full aspect-video mb-6">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="absolute w-full h-full object-cover rounded-lg"
+                        />
+                      </div>
                       <h3 className="text-xl font-title text-crow-light mb-2">{project.title}</h3>
                       <p className="text-crow-text font-body">{project.description}</p>
                     </Link>
