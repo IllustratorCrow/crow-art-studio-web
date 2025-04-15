@@ -34,18 +34,18 @@ const MaresCreativos = () => {
             Volver a proyectos
           </Link>
           <h1 className="text-4xl font-title mb-8">Mares Creativos</h1>
-          <div className="flex flex-col md:flex-row gap-8 items-center">
-            <div className="w-full md:w-1/3 bg-crow-dark/30 backdrop-blur-sm p-6 rounded-lg">
-              <p className="text-lg text-crow-text font-body leading-relaxed">
-                Mares Creativos es una propuesta académica desarrollada como parte de mi proyecto de fin de grado en la escuela de diseño. Consiste en una línea de merchandising conceptual diseñada para el Museo Marítimo del Cantábrico, con el objetivo de conectar a los visitantes con la riqueza y diversidad de la vida marina a través del arte y el diseño.
-              </p>
-            </div>
-            <div className="w-full md:w-2/3">
-              <img 
-                src="https://i.imgur.com/pgCqphb.jpeg" 
-                alt="Mares Creativos - Portada"
-                className="w-full rounded-lg shadow-xl"
-              />
+          <div className="relative">
+            <img 
+              src="https://i.imgur.com/pgCqphb.jpeg" 
+              alt="Mares Creativos - Portada"
+              className="w-full h-[60vh] object-cover rounded-lg shadow-xl"
+            />
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-crow-dark/90 to-transparent flex items-center">
+              <div className="w-full md:w-1/2 p-6">
+                <p className="text-lg text-crow-text font-body leading-relaxed">
+                  Mares Creativos es una propuesta académica desarrollada como parte de mi proyecto de fin de grado en la escuela de diseño. Consiste en una línea de merchandising conceptual diseñada para el Museo Marítimo del Cantábrico, con el objetivo de conectar a los visitantes con la riqueza y diversidad de la vida marina a través del arte y el diseño.
+                </p>
+              </div>
             </div>
           </div>
         </div>

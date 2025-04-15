@@ -1,4 +1,3 @@
-
 import { Link, useLocation } from "react-router-dom";
 import { Bird } from "lucide-react";
 import {
@@ -17,7 +16,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-crow-dark/90 backdrop-blur-sm z-50">
+    <nav className="fixed top-0 w-full bg-black/25 backdrop-blur-sm z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <Link to="/" className="text-2xl font-title flex items-center gap-2 text-crow-text">
@@ -32,12 +31,12 @@ const Navbar = () => {
               Inicio
             </Link>
             <NavigationMenu>
-              <NavigationMenuList>
+              <NavigationMenuList className="flex items-center">
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className={`${isActive("/proyectos")} hover:text-crow-light transition-colors bg-transparent hover:bg-transparent p-0 h-auto`}>
+                  <NavigationMenuTrigger className={`${isActive("/proyectos")} hover:text-crow-light transition-colors bg-transparent hover:bg-transparent/10 p-0 h-auto`}>
                     Proyectos
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
+                  <NavigationMenuContent className="bg-black/25 backdrop-blur-sm">
                     <ul className="w-48 p-2">
                       <li>
                         <Link to="/proyectos/mares-creativos" className="block px-4 py-2 hover:bg-crow-dark/10 rounded-md">
@@ -55,12 +54,12 @@ const Navbar = () => {
               </NavigationMenuList>
             </NavigationMenu>
             <NavigationMenu>
-              <NavigationMenuList>
+              <NavigationMenuList className="flex items-center">
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className={`${isActive("/servicios")} hover:text-crow-light transition-colors bg-transparent hover:bg-transparent p-0 h-auto`}>
+                  <NavigationMenuTrigger className={`${isActive("/servicios")} hover:text-crow-light transition-colors bg-transparent hover:bg-transparent/10 p-0 h-auto`}>
                     Servicios
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
+                  <NavigationMenuContent className="bg-black/25 backdrop-blur-sm">
                     <ul className="w-48 p-2">
                       <li>
                         <Link to="/servicios/diseno-grafico" className="block px-4 py-2 hover:bg-crow-dark/10 rounded-md">
