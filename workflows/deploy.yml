@@ -1,3 +1,4 @@
+
 name: Deploy to GitHub Pages
 
 on:
@@ -24,13 +25,19 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # 4. Compilar el proyecto
+      # 4. Compilar el proyecto con la base correcta para GitHub Pages
       - name: Build project
         run: npm run build
+        env:
+          VITE_BASE_URL: './'
 
-      # 5. Desplegar en GitHub Pages
+      # 5. Configurar 404.html para SPA
+      - name: Configure SPA fallback
+        run: cp dist/index.html dist/404.html
+
+      # 6. Desplegar en GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist # Carpeta de salida de Vite (cambia esto si usas otra carpeta)
+          publish_dir: ./dist # Carpeta de salida de Vite
