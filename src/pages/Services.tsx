@@ -1,4 +1,3 @@
-
 import { Check } from "lucide-react";
 
 const Services = () => {
@@ -43,10 +42,10 @@ const Services = () => {
       {/* Introducción */}
       <section className="bg-crow-dark text-crow-text py-20">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold mb-6 animate-fade-in">
+          <h1 className="text-4xl font-bold mb-6">
             Nuestros <span className="text-crow-light">Servicios</span>
           </h1>
-          <p className="text-xl max-w-2xl mb-8 text-crow-medium animate-fade-in">
+          <p className="text-xl max-w-2xl mb-8 text-crow-medium">
             Ofrecemos soluciones creativas personalizadas para dar vida a tus proyectos
           </p>
         </div>
@@ -59,7 +58,7 @@ const Services = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-crow-dark/30 backdrop-blur-sm rounded-lg p-8 hover:bg-crow-dark/50 transition-colors"
+                className="bg-crow-dark/30 backdrop-blur-sm rounded-lg p-8"
               >
                 <h3 className="text-2xl font-bold text-crow-light mb-4">{service.title}</h3>
                 <p className="text-crow-text mb-6">{service.description}</p>

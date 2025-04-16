@@ -21,28 +21,42 @@ const Navbar = () => {
 
         {/* Menú de navegación */}
         <NavigationMenu>
-          <NavigationMenuList>
+          <NavigationMenuList className="flex space-x-4">
             {/* Inicio */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-white hover:text-gray-300 bg-transparent">
+              <Link to="/" className="text-white">
                 Inicio
-              </NavigationMenuTrigger>
+              </Link>
             </NavigationMenuItem>
 
             {/* Proyectos */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-white hover:text-gray-300 bg-transparent">
+              <NavigationMenuTrigger className="text-white">
                 Proyectos
               </NavigationMenuTrigger>
-              <NavigationMenuContent className="bg-black/75 rounded-lg p-2 mt-2">
+              <NavigationMenuContent className="absolute mt-2 p-4 bg-black/75 rounded-lg shadow-lg min-w-[200px]">
                 <ul className="space-y-2">
                   <li>
-                    <Link to="/proyectos/mares-creativos" className="text-white hover:text-gray-300 block">
+                    <Link
+                      to="/proyectos"
+                      className="block text-white font-bold"
+                    >
+                      Ver todos los proyectos
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/proyectos/mares-creativos"
+                      className="block text-white"
+                    >
                       Mares Creativos
                     </Link>
                   </li>
                   <li>
-                    <Link to="/proyectos/lavida-del-besaya" className="text-white hover:text-gray-300 block">
+                    <Link
+                      to="/proyectos/lavida-del-besaya"
+                      className="block text-white"
+                    >
                       La vida del Besaya
                     </Link>
                   </li>
@@ -52,28 +66,48 @@ const Navbar = () => {
 
             {/* Servicios */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-white hover:text-gray-300 bg-transparent">
+              <NavigationMenuTrigger className="text-white">
                 Servicios
               </NavigationMenuTrigger>
-              <NavigationMenuContent className="bg-black/75 rounded-lg p-2 mt-2">
+              <NavigationMenuContent className="absolute mt-2 p-4 bg-black/75 rounded-lg shadow-lg min-w-[200px]">
                 <ul className="space-y-2">
                   <li>
-                    <Link to="/servicios/diseno-grafico" className="text-white hover:text-gray-300 block">
+                    <Link
+                      to="/servicios"
+                      className="block text-white font-bold"
+                    >
+                      Ver todos los servicios
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/servicios/diseno-grafico"
+                      className="block text-white"
+                    >
                       Diseño Gráfico
                     </Link>
                   </li>
                   <li>
-                    <Link to="/servicios/ilustracion" className="text-white hover:text-gray-300 block">
+                    <Link
+                      to="/servicios/ilustracion"
+                      className="block text-white"
+                    >
                       Ilustración
                     </Link>
                   </li>
                   <li>
-                    <Link to="/servicios/diseno-productos" className="text-white hover:text-gray-300 block">
+                    <Link
+                      to="/servicios/diseno-productos"
+                      className="block text-white"
+                    >
                       Diseño de Productos
                     </Link>
                   </li>
                   <li>
-                    <Link to="/servicios/servicios-editoriales" className="text-white hover:text-gray-300 block">
+                    <Link
+                      to="/servicios/servicios-editoriales"
+                      className="block text-white"
+                    >
                       Servicios Editoriales
                     </Link>
                   </li>
@@ -83,18 +117,9 @@ const Navbar = () => {
 
             {/* Contacto */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-white hover:text-gray-300 bg-transparent">
+              <Link to="/contacto" className="text-white">
                 Contacto
-              </NavigationMenuTrigger>
-              <NavigationMenuContent className="bg-black/75 rounded-lg p-2 mt-2">
-                <ul className="space-y-2">
-                  <li>
-                    <Link to="/contacto" className="text-white hover:text-gray-300 block">
-                      Información de contacto
-                    </Link>
-                  </li>
-                </ul>
-              </NavigationMenuContent>
+              </Link>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
