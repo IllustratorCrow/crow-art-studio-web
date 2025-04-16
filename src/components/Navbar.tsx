@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import logoclaro from "../assets/logoclaro.png"; // Importa el logo claro
+import logoclaro from "../assets/logoclaro.png"; // Conservamos el logo claro
 import {
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuItem,
   NavigationMenuTrigger,
   NavigationMenuContent,
-} from "./ui/navigation-menu"; // Importa los componentes desde navigation-menu.tsx
+} from "./ui/navigation-menu";
 
 const Navbar = () => {
   return (
