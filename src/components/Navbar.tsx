@@ -1,99 +1,103 @@
-import { Link, useLocation } from "react-router-dom";
-import { Bird } from "lucide-react";
+import { Link } from "react-router-dom";
+import logoclaro from "../assets/logoclaro.png"; // Importa el logo claro
 import {
   NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
   NavigationMenuList,
+  NavigationMenuItem,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+  NavigationMenuContent,
+} from "./ui/navigation-menu"; // Importa los componentes desde navigation-menu.tsx
 
 const Navbar = () => {
-  const location = useLocation();
-
-  const isActive = (path: string) => {
-    return location.pathname === path ? "text-crow-light" : "text-crow-text";
-  };
-
   return (
-    <nav className="fixed top-0 w-full bg-black/25 backdrop-blur-sm z-50">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <Link to="/" className="text-2xl font-title flex items-center gap-2 text-crow-text">
-            <Bird className="w-8 h-8 text-crow-light" />
-            Ilustrator <span className="text-crow-light">Crow</span>
-          </Link>
-          <div className="flex flex-wrap items-center gap-6 md:gap-8 font-body">
-            <Link 
-              to="/" 
-              className={`${isActive("/")} hover:text-crow-light transition-colors`}
-            >
-              Inicio
-            </Link>
-            <NavigationMenu>
-              <NavigationMenuList className="flex items-center">
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className={`${isActive("/proyectos")} hover:text-crow-light transition-colors bg-transparent hover:bg-transparent/10 p-0 h-auto`}>
-                    Proyectos
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent className="bg-black/25 backdrop-blur-sm">
-                    <ul className="w-48 p-2">
-                      <li>
-                        <Link to="/proyectos/mares-creativos" className="block px-4 py-2 hover:bg-crow-dark/10 rounded-md">
-                          Mares Creativos
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/proyectos/vida-besaya" className="block px-4 py-2 hover:bg-crow-dark/10 rounded-md">
-                          La Vida del Besaya
-                        </Link>
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
-            <NavigationMenu>
-              <NavigationMenuList className="flex items-center">
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className={`${isActive("/servicios")} hover:text-crow-light transition-colors bg-transparent hover:bg-transparent/10 p-0 h-auto`}>
-                    Servicios
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent className="bg-black/25 backdrop-blur-sm">
-                    <ul className="w-48 p-2">
-                      <li>
-                        <Link to="/servicios/diseno-grafico" className="block px-4 py-2 hover:bg-crow-dark/10 rounded-md">
-                          Diseño Gráfico
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/servicios/ilustracion" className="block px-4 py-2 hover:bg-crow-dark/10 rounded-md">
-                          Ilustración
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/servicios/productos" className="block px-4 py-2 hover:bg-crow-dark/10 rounded-md">
-                          Diseño de Productos
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/servicios/editorial" className="block px-4 py-2 hover:bg-crow-dark/10 rounded-md">
-                          Servicios Editoriales
-                        </Link>
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
-            <Link 
-              to="/contacto" 
-              className={`${isActive("/contacto")} hover:text-crow-light transition-colors`}
-            >
-              Contacto
-            </Link>
-          </div>
-        </div>
+    <nav className="fixed top-0 left-0 w-full h-16 bg-black/25 backdrop-blur-sm z-50">
+      {/* Contenedor interno */}
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center h-full">
+        {/* Logo */}
+        <Link to="/" className="text-2xl font-title flex items-center gap-2 text-white">
+          <img src={logoclaro} alt="Illustrator Crow Logo" className="w-8 h-8" />
+          Illustrator <span className="text-crow-light">Crow</span>
+        </Link>
+
+        {/* Menú de navegación */}
+        <NavigationMenu>
+          <NavigationMenuList>
+            {/* Inicio */}
+            <NavigationMenuItem>
+              <NavigationMenuTrigger className="text-white hover:text-gray-300 bg-transparent">
+                Inicio
+              </NavigationMenuTrigger>
+            </NavigationMenuItem>
+
+            {/* Proyectos */}
+            <NavigationMenuItem>
+              <NavigationMenuTrigger className="text-white hover:text-gray-300 bg-transparent">
+                Proyectos
+              </NavigationMenuTrigger>
+              <NavigationMenuContent className="bg-black/75 rounded-lg p-2 mt-2">
+                <ul className="space-y-2">
+                  <li>
+                    <Link to="/proyectos/mares-creativos" className="text-white hover:text-gray-300 block">
+                      Mares Creativos
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/proyectos/lavida-del-besaya" className="text-white hover:text-gray-300 block">
+                      La vida del Besaya
+                    </Link>
+                  </li>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+
+            {/* Servicios */}
+            <NavigationMenuItem>
+              <NavigationMenuTrigger className="text-white hover:text-gray-300 bg-transparent">
+                Servicios
+              </NavigationMenuTrigger>
+              <NavigationMenuContent className="bg-black/75 rounded-lg p-2 mt-2">
+                <ul className="space-y-2">
+                  <li>
+                    <Link to="/servicios/diseno-grafico" className="text-white hover:text-gray-300 block">
+                      Diseño Gráfico
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/servicios/ilustracion" className="text-white hover:text-gray-300 block">
+                      Ilustración
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/servicios/diseno-productos" className="text-white hover:text-gray-300 block">
+                      Diseño de Productos
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/servicios/servicios-editoriales" className="text-white hover:text-gray-300 block">
+                      Servicios Editoriales
+                    </Link>
+                  </li>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+
+            {/* Contacto */}
+            <NavigationMenuItem>
+              <NavigationMenuTrigger className="text-white hover:text-gray-300 bg-transparent">
+                Contacto
+              </NavigationMenuTrigger>
+              <NavigationMenuContent className="bg-black/75 rounded-lg p-2 mt-2">
+                <ul className="space-y-2">
+                  <li>
+                    <Link to="/contacto" className="text-white hover:text-gray-300 block">
+                      Información de contacto
+                    </Link>
+                  </li>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
       </div>
     </nav>
   );

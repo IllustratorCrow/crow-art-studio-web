@@ -52,7 +52,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="pt-16">
+    <div className="relative">
       {/* Banner */}
       <section 
         className="bg-crow-dark text-crow-text min-h-[80vh] flex items-center bg-cover bg-center bg-no-repeat relative"
