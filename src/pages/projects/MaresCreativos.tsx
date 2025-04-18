@@ -34,7 +34,7 @@ const MaresCreativos = () => {
       {/* Contenido principal */}
       <main className="flex-grow container mx-auto px-4 py-8 mt-16"> {/* Margen superior para evitar superposición */}
         {/* Título y descripción */}
-        <section className="py-12">
+        <section className="py-0">
           <Link to="/proyectos" className="inline-flex items-center gap-2 text-crow-light mb-4 hover:text-crow-medium transition-colors">
             <ArrowLeft className="w-4 h-4" />
             Volver a proyectos

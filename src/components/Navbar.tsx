@@ -14,8 +14,8 @@ const Navbar = () => {
       {/* Contenedor interno */}
       <div className="container mx-auto px-4 py-4 flex justify-between items-center h-full">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-title flex items-center gap-2 text-white">
-          <img src={logoclaro} alt="Illustrator Crow Logo" className="w-8 h-8" />
+        <Link to="/" className="text-lg font-title flex items-center gap-2 text-white">
+          <img src={logoclaro} alt="Illustrator Crow Logo" className="w-6 h-6" />
           Illustrator <span className="text-crow-light">Crow</span>
         </Link>
 
@@ -24,38 +24,38 @@ const Navbar = () => {
           <NavigationMenuList className="flex space-x-4">
             {/* Inicio */}
             <NavigationMenuItem>
-              <Link to="/" className="text-white">
+              <Link to="/" className="text-base font-bold text-white">
                 Inicio
               </Link>
             </NavigationMenuItem>
 
             {/* Proyectos */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-white">
+              <NavigationMenuTrigger className="text-base text-white">
                 Proyectos
               </NavigationMenuTrigger>
-              <NavigationMenuContent className="absolute mt-2 p-4 bg-black/75 rounded-lg shadow-lg min-w-[200px]">
+              <NavigationMenuContent className="absolute mt-3 p-4 bg-black/25 rounded-lg shadow-none min-w-[200px] border-none">
                 <ul className="space-y-2">
                   <li>
                     <Link
                       to="/proyectos"
-                      className="block text-white font-bold"
+                      className="block text-base font-bold text-white"
                     >
-                      Ver todos los proyectos
+                      Mis proyectos
                     </Link>
                   </li>
                   <li>
                     <Link
                       to="/proyectos/mares-creativos"
-                      className="block text-white"
+                      className="block text-base text-white"
                     >
                       Mares Creativos
                     </Link>
                   </li>
                   <li>
                     <Link
-                      to="/proyectos/lavida-del-besaya"
-                      className="block text-white"
+                      to="/proyectos/vida-besaya"
+                      className="block text-base text-white"
                     >
                       La vida del Besaya
                     </Link>
@@ -66,23 +66,23 @@ const Navbar = () => {
 
             {/* Servicios */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-white">
+              <NavigationMenuTrigger className="text-base text-white">
                 Servicios
               </NavigationMenuTrigger>
-              <NavigationMenuContent className="absolute mt-2 p-4 bg-black/75 rounded-lg shadow-lg min-w-[200px]">
+              <NavigationMenuContent className="absolute mt-3 p-4 bg-black/25 rounded-lg shadow-none min-w-[200px] border-none">
                 <ul className="space-y-2">
                   <li>
                     <Link
                       to="/servicios"
-                      className="block text-white font-bold"
+                      className="block text-base font-bold text-white"
                     >
-                      Ver todos los servicios
+                      Mis servicios
                     </Link>
                   </li>
                   <li>
                     <Link
                       to="/servicios/diseno-grafico"
-                      className="block text-white"
+                      className="block text-base text-white"
                     >
                       Diseño Gráfico
                     </Link>
@@ -90,7 +90,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       to="/servicios/ilustracion"
-                      className="block text-white"
+                      className="block text-base text-white"
                     >
                       Ilustración
                     </Link>
@@ -98,7 +98,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       to="/servicios/diseno-productos"
-                      className="block text-white"
+                      className="block text-base text-white"
                     >
                       Diseño de Productos
                     </Link>
@@ -106,7 +106,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       to="/servicios/servicios-editoriales"
-                      className="block text-white"
+                      className="block text-base text-white"
                     >
                       Servicios Editoriales
                     </Link>
@@ -117,7 +117,7 @@ const Navbar = () => {
 
             {/* Contacto */}
             <NavigationMenuItem>
-              <Link to="/contacto" className="text-white">
+              <Link to="/contacto" className="text-base font-bold text-white">
                 Contacto
               </Link>
             </NavigationMenuItem>
