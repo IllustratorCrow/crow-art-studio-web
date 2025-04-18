@@ -17,7 +17,7 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"), // Alias para importaciones más limpias
     },
   },
-  base: './', // Ruta base para GitHub Pages (necesario si usas un subdirectorio)
+  base: '/', // Ruta base para GitHub Pages (necesario si usas un subdirectorio)
   build: {
     outDir: 'docs', // Carpeta de salida actualizada a `docs`
     emptyOutDir: true, // Limpia la carpeta de salida antes de construir
