@@ -13,13 +13,13 @@ const Index = () => {
     {
       title: "Mares Creativos",
       image: "https://i.imgur.com/pgCqphb.jpeg",
-      description: "Diseño de productos",
+      description: "Línea de merchandising diseñada para el Museo Marítimo del Cantábrico.",
       path: "/proyectos/mares-creativos"
     },
     {
       title: "La Vida del Besaya",
       image: "https://i.imgur.com/SLAscDB.jpeg",
-      description: "Paneles e Infografías",
+      description: "Paneles e Infografías sobre la historia, fauna y flora de la Senda Fluvial del Besaya.",
       path: "/proyectos/vida-besaya"
     }
   ];
@@ -64,16 +64,16 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl animate-fade-in">
             <h1 className="text-5xl font-title mb-6">
-              Diseñamos para <span className="text-crow-light">destacar y conectar</span>
+            <span className="text-crow-light">Diseño gráfico</span> con mirada artística
             </h1>
             <p className="text-xl mb-8 text-crow-medium font-body">
-              Tu éxito comienza con una identidad visual sólida. Diseño gráfico funcional, ilustraciones impactantes y estrategias que generan resultados.
+            En Illustrator Crow , creo diseños que equilibran funcionalidad y arte. Desde ilustraciones únicas hasta estrategias visuales efectivas, cada proyecto está diseñado para destacar y generar resultados.
             </p>
             <Link
               to="/contacto"
               className="inline-flex items-center gap-2 bg-crow-primary hover:bg-crow-medium px-6 py-3 rounded-lg transition-colors font-body"
             >
-              Iniciemos un proyecto
+              Trabajemos juntos
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
@@ -83,7 +83,7 @@ const Index = () => {
       {/* Proyectos Destacados */}
       <section className="py-20 bg-gradient-to-b from-crow-dark to-crow-primary">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-title text-crow-text mb-12">Proyectos Destacados</h2>
+          <h2 className="text-4xl font-title text-crow-text mb-12">Proyectos Destacados</h2>
           <Carousel className="w-full max-w-4xl mx-auto">
             <CarouselContent>
               {featuredProjects.map((project, index) => (
@@ -113,7 +113,7 @@ const Index = () => {
       {/* Servicios */}
       <section className="py-20 bg-crow-primary">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-title text-crow-text mb-12">¿Qué ofrezco?</h2>
+          <h2 className="text-4xl font-title text-crow-text mb-12">¿Qué ofrezco?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
               <div

@@ -39,17 +39,17 @@ const VidaBesaya = () => {
             <ArrowLeft className="w-4 h-4" />
             Volver a proyectos
           </Link>
-          <h1 className="text-4xl font-title mb-8">La Vida del Besaya</h1>
+          <h1 className="text-4xl font-title mb-8">La vida del Besaya</h1>
           <div className="relative">
-            <img
-  src="https://i.imgur.com/SLAscDB.jpeg"
-  alt="La Vida del Besaya - Portada"
-  className="w-full h-[60vh] object-cover object-[30%_15%] rounded-lg shadow-xl"
+            <img 
+              src="https://i.imgur.com/SLAscDB.jpeg" 
+              alt="Mares Creativos - Portada"
+              className="w-full h-[60vh] object-cover object-[30%_15%] rounded-lg shadow-xl"
             />
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-crow-dark/90 to-transparent flex items-center">
               <div className="w-full md:w-1/2 p-6">
                 <p className="text-lg text-crow-text font-body leading-relaxed">
-                  La Vida del Besaya es un proyecto dedicado a explorar la riqueza cultural y natural del río Besaya. A través de paneles informativos e infografías, se busca conectar a los visitantes con la historia, flora y fauna de esta región única.
+                La Vida del Besaya es un proyecto en desarrollo dedicado a explorar la riqueza cultural y natural de la senda fluvial del río Besaya . A través de paneles informativos e infografías visualmente atractivas, este proyecto busca conectar a los visitantes con la historia y el entorno que dan contexto a esta ruta. Además, ofrece un acercamiento accesible y fácil de entender sobre la flora, fauna y paisajes locales, destacando la importancia de su conservación y el valor que representan para la región.
                 </p>
               </div>
             </div>
@@ -61,31 +61,7 @@ const VidaBesaya = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto space-y-12">
               <p className="text-lg text-crow-text font-body leading-relaxed">
-                Este proyecto incluye una serie de ilustraciones y diseños que destacan la biodiversidad del entorno del Besaya. Desde las especies de aves migratorias hasta los ecosistemas fluviales, cada panel está diseñado para educar y concienciar sobre la importancia de preservar este patrimonio natural.
-              </p>
-
-              <div className="w-full max-w-3xl mx-auto">
-                <Carousel className="w-full">
-                  <CarouselContent>
-                    {projectImages.map((image, index) => (
-                      <CarouselItem key={index}>
-                        <div className="p-1">
-                          <img
-                            src={image.src}
-                            alt={image.alt}
-                            className="w-full aspect-video object-cover rounded-lg shadow-xl"
-                          />
-                        </div>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious />
-                  <CarouselNext />
-                </Carousel>
-              </div>
-
-              <p className="text-lg text-crow-text font-body leading-relaxed">
-                Además de los paneles físicos, el proyecto también incluye materiales digitales interactivos que permiten a los usuarios explorar el contenido de manera más profunda. Estos recursos están diseñados para ser accesibles tanto en dispositivos móviles como en pantallas grandes.
+                Proyecto aún en desarrollo.
               </p>
             </div>
           </div>

@@ -44,12 +44,12 @@ const MaresCreativos = () => {
             <img 
               src="https://i.imgur.com/pgCqphb.jpeg" 
               alt="Mares Creativos - Portada"
-              className="w-full h-[60vh] object-cover rounded-lg shadow-xl"
+              className="w-full h-[60vh] object-cover object-[30%_50%] rounded-lg shadow-xl"
             />
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-crow-dark/90 to-transparent flex items-center">
               <div className="w-full md:w-1/2 p-6">
                 <p className="text-lg text-crow-text font-body leading-relaxed">
-                  Mares Creativos es una propuesta académica desarrollada como parte de mi proyecto de fin de grado en la escuela de diseño. Consiste en una línea de merchandising conceptual diseñada para el Museo Marítimo del Cantábrico, con el objetivo de conectar a los visitantes con la riqueza y diversidad de la vida marina a través del arte y el diseño.
+                Mares Creativos es una propuesta académica desarrollada como parte de mi proyecto de fin de grado en la escuela de diseño. Consiste en una línea de merchandising diseñada para el Museo Marítimo del Cantábrico, con el objetivo de actualizar y ampliar la oferta de productos en la tienda de recuerdos del museo.
                 </p>
               </div>
             </div>
@@ -85,7 +85,7 @@ const MaresCreativos = () => {
               </div>
 
               <p className="text-lg text-crow-text font-body leading-relaxed">
-                Las ilustraciones de Mares Creativos combinan un estilo de líneas limpias y detalles expresivos con una paleta de colores vibrante que evoca la diversidad del océano, utilizando tonos como azules profundos y turquesas brillantes para capturar su esencia. Diseñadas para ser versátiles, estas piezas mantienen su impacto visual y funcionalidad al adaptarse a diferentes formatos, desde tazas y bolsas hasta empaques, demostrando cómo el arte puede integrarse en objetos cotidianos sin perder su identidad ni calidad artística.
+                Las ilustraciones de Mares Creativos combinan un estilo de líneas limpias y detalles expresivos con una paleta de colores vibrante que evoca la diversidad del océano, utilizando tonos como azules profundos y turquesas brillantes para capturar su esencia. Diseñadas para ser versátiles, estas piezas mantienen su impacto visual y funcionalidad al adaptarse a diferentes formatos, desde tazas y bolsas hasta packaging, demostrando cómo el arte puede integrarse en objetos cotidianos sin perder su identidad ni calidad artística.
               </p>
             </div>
           </div>
