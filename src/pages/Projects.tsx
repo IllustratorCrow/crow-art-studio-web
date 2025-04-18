@@ -35,7 +35,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="pt-16"> {/* Añade padding-top igual a la altura de la barra */}
+    <div className="pt-0"> {/* Padding-top igual a la altura de la barra */}
       {/* Introducción */}
       <section className="bg-crow-dark text-crow-text py-20">
         <div className="container mx-auto px-4">
