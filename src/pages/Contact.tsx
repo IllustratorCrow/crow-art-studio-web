@@ -41,7 +41,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="pt-16">
+    <div className="pt-0">
       {/* Introducción */}
       <section className="bg-crow-dark text-crow-text py-20">
         <div className="container mx-auto px-4">
