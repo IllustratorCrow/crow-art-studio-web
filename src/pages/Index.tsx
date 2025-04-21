@@ -1,12 +1,5 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Brush, PaintBucket, Palette, Package, BookOpen } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 const Index = () => {
   const featuredProjects = [
@@ -84,29 +77,25 @@ const Index = () => {
       <section className="py-20 bg-gradient-to-b from-crow-dark to-crow-primary">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-title text-crow-text mb-12">Proyectos Destacados</h2>
-          <Carousel className="w-full max-w-4xl mx-auto">
-            <CarouselContent>
-              {featuredProjects.map((project, index) => (
-                <CarouselItem key={index}>
-                  <div className="bg-crow-dark/50 backdrop-blur-sm rounded-lg overflow-hidden p-6">
-                    <Link to={project.path}>
-                      <div className="relative w-full aspect-video mb-6">
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          className="absolute w-full h-full object-cover rounded-lg"
-                        />
-                      </div>
-                      <h3 className="text-2xl font-title text-crow-light mb-2">{project.title}</h3>
-                      <p className="text-crow-text font-body">{project.description}</p>
-                    </Link>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            {featuredProjects.map((project, index) => (
+              <Link
+                key={index}
+                to={project.path}
+                className="group relative overflow-hidden rounded-xl shadow-lg transform hover:scale-[1.01] transition-transform"
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-64 object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-crow-dark/70 p-4">
+                  <h3 className="text-xl font-title text-crow-light">{project.title}</h3>
+                  <p className="text-sm text-crow-text font-body">{project.description}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
