@@ -78,9 +78,9 @@ const DisenoGrafico = () => {
             />
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-crow-dark/90 to-transparent flex items-center">
               <div className="w-full md:w-1/2 p-6">
-                <p className="text-4xl font-title mb-8">Servicios de Diseño Gráfico</p>
+                <p className="text-4xl font-title mb-8">Servicios de Diseño Publicitario</p>
                 <p className="text-lg text-crow-text font-body leading-relaxed">
-                  Diseño gráfico adaptado a tus necesidades: logotipos, papelería, cartelería y más.
+                  Diseños adaptados a tus necesidades e imagen de marca: carteles, flyers, banners y muchos otros formatos promocionales.
                 </p>
               </div>
             </div>

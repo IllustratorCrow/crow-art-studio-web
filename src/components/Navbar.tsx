@@ -14,7 +14,7 @@ const Navbar = () => {
       {/* Contenedor interno */}
       <div className="container mx-auto px-4 py-4 flex justify-between items-center h-full">
         {/* Logo */}
-        <Link to="/" className="text-lg font-title flex items-center gap-2 text-white">
+        <Link to="/" className="text-2xl font-title flex items-center gap-2 text-white">
           <img src={logoclaro} alt="Illustrator Crow Logo" className="w-6 h-6" />
           Illustrator <span className="text-crow-light">Crow</span>
         </Link>
@@ -81,10 +81,10 @@ const Navbar = () => {
                   </li>
                   <li>
                     <Link
-                      to="/servicios/diseno-grafico"
+                      to="/servicios/diseno-publicitario"
                       className="block text-base text-white"
                     >
-                      Diseño Gráfico
+                      Diseño Publicitario
                     </Link>
                   </li>
                   <li>
@@ -97,18 +97,18 @@ const Navbar = () => {
                   </li>
                   <li>
                     <Link
-                      to="/servicios/diseno-productos"
+                      to="/servicios/identidad-visual"
                       className="block text-base text-white"
                     >
-                      Diseño de Productos
+                      Identidad Visual
                     </Link>
                   </li>
                   <li>
                     <Link
-                      to="/servicios/servicios-editoriales"
+                      to="/servicios/diseno-editorial"
                       className="block text-base text-white"
                     >
-                      Servicios Editoriales
+                      Diseño Editorial
                     </Link>
                   </li>
                 </ul>

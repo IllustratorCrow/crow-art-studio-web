@@ -14,47 +14,47 @@ const Index = () => {
       title: "Mares Creativos",
       image: "https://i.imgur.com/pgCqphb.jpeg",
       description: "Línea de merchandising diseñada para el Museo Marítimo del Cantábrico.",
-      path: "/proyectos/mares-creativos"
+      path: "/proyectos/mares-creativos",
     },
     {
       title: "La Vida del Besaya",
       image: "https://i.imgur.com/SLAscDB.jpeg",
       description: "Paneles e Infografías sobre la historia, fauna y flora de la Senda Fluvial del Besaya.",
-      path: "/proyectos/vida-besaya"
-    }
+      path: "/proyectos/vida-besaya",
+    },
   ];
 
   const services = [
     {
       icon: <Brush className="w-8 h-8" />,
-      title: "Diseño Gráfico",
-      description: "Identidad corporativa, cartelería, redes sociales.",
-      path: "/servicios/diseno-grafico"
+      title: "Diseño Publicitario",
+      description: "Creación de carteles, flyers, banners y otros materiales promocionales para potenciar tu mensaje y captar la atención de tu audiencia.",
+      path: "/servicios/diseno-publicitario",
     },
     {
       icon: <Palette className="w-8 h-8" />,
       title: "Ilustración",
-      description: "Retratos, portadas de libros, arte conceptual.",
-      path: "/servicios/ilustracion"
+      description: "Creación de ilustraciones personalizadas para medios digitales y tradicionales, dando vida a tus ideas con un toque artístico único.",
+      path: "/servicios/ilustracion",
     },
     {
       icon: <Package className="w-8 h-8" />,
-      title: "Diseño de Productos",
-      description: "Tazas, camisetas, packaging.",
-      path: "/servicios/productos"
+      title: "Identidad Visual",
+      description: "Diseño de logotipos, branding integral, manuales de identidad y aplicaciones en merchandising para construir una imagen coherente y memorable.",
+      path: "/servicios/identidad-visual",
     },
     {
       icon: <BookOpen className="w-8 h-8" />,
-      title: "Servicios Editoriales",
-      description: "Portadas, maquetación, catálogos.",
-      path: "/servicios/editorial"
-    }
+      title: "Diseño Editorial",
+      description: "Maquetación de libros, diseño de portadas, revistas y catálogos para dar forma visual a tus contenidos con estilo y profesionalidad.",
+      path: "/servicios/diseno-editorial",
+    },
   ];
 
   return (
     <div className="relative">
       {/* Banner */}
-      <section 
+      <section
         className="bg-crow-dark text-crow-text min-h-[80vh] flex items-center bg-cover bg-center bg-no-repeat relative"
         style={{
           backgroundImage: 'url("https://i.imgur.com/Zz1JpiE.jpeg")',
@@ -64,10 +64,10 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl animate-fade-in">
             <h1 className="text-5xl font-title mb-6">
-            <span className="text-crow-light">Diseño gráfico</span> con mirada artística
+              <span className="text-crow-light">Diseño Gráfico</span> con mirada artística
             </h1>
             <p className="text-xl mb-8 text-crow-medium font-body">
-            En Illustrator Crow , creo diseños que equilibran funcionalidad y arte. Desde ilustraciones únicas hasta estrategias visuales efectivas, cada proyecto está diseñado para destacar y generar resultados.
+              En Illustrator Crow, creo diseños que equilibran funcionalidad y arte. Desde ilustraciones únicas hasta estrategias visuales efectivas, cada proyecto está diseñado para destacar y generar resultados.
             </p>
             <Link
               to="/contacto"
@@ -97,7 +97,7 @@ const Index = () => {
                           className="absolute w-full h-full object-cover rounded-lg"
                         />
                       </div>
-                      <h3 className="text-xl font-title text-crow-light mb-2">{project.title}</h3>
+                      <h3 className="text-2xl font-title text-crow-light mb-2">{project.title}</h3>
                       <p className="text-crow-text font-body">{project.description}</p>
                     </Link>
                   </div>
