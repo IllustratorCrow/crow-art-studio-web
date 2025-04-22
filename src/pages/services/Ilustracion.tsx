@@ -56,7 +56,6 @@ const Ilustracion = () => {
           Volver a servicios
         </Link>
       </section>
-
       {/* Portada */}
       <section className="container mx-auto px-4">
         <div className="relative mb-12">
@@ -75,7 +74,6 @@ const Ilustracion = () => {
           </div>
         </div>
       </section>
-
       {/* Galería Ilustraciones */}
       <section className="py-20 bg-gradient-to-b from-crow-dark to-crow-primary">
         <div className="container mx-auto px-4">
@@ -100,7 +98,6 @@ const Ilustracion = () => {
           </div>
         </div>
       </section>
-
       {/* Otros formatos */}
       <section className="py-20 bg-gradient-to-b from-crow-primary to-crow-dark">
         <div className="container mx-auto px-4">

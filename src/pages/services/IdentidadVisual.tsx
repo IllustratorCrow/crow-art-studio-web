@@ -1,4 +1,4 @@
-import ServiceLayout from "@/components/ServiceLayout";
+
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -23,6 +23,27 @@ const brandingProjects = [
   },
 ];
 
+const otrasAplicaciones = [
+  {
+    id: 1,
+    title: "* Merchandising *",
+    description: "(Página aún en desarrollo)",
+    image: "https://i.imgur.com/EXAMPLE_IMAGE_1.jpg",
+  },
+  {
+    id: 2,
+    title: "* Señalética *",
+    description: "(Página aún en desarrollo)",
+    image: "https://i.imgur.com/EXAMPLE_IMAGE_2.jpg",
+  },
+  {
+    id: 3,
+    title: "* Red social *",
+    description: "(Página aún en desarrollo)",
+    image: "https://i.imgur.com/EXAMPLE_IMAGE_3.jpg",
+  },
+];
+
 const IdentidadVisual = () => {
   return (
     <div className="pt-16 bg-crow-dark text-white min-h-screen">
@@ -35,16 +56,25 @@ const IdentidadVisual = () => {
           Volver a servicios
         </Link>
       </section>
-      
+      {/* Portada */}
       <section className="container mx-auto px-4">
-        <div className="mb-12">
-          <h1 className="text-4xl font-title mb-4">Identidad Visual</h1>
-          <p className="text-xl text-crow-medium font-body max-w-2xl">
-            Diseño de logotipos, branding integral, manuales de identidad y aplicaciones en merchandising para construir una imagen coherente y memorable.
-          </p>
+        <div className="relative mb-12">
+          <img
+            src="https://i.imgur.com/pgCqphb.jpeg"
+            alt="Identidad Visual - Portada"
+            className="w-full h-[60vh] object-cover object-center rounded-lg shadow-xl"
+          />
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-crow-dark/90 to-transparent flex items-center">
+            <div className="w-full md:w-1/2 p-6">
+              <p className="text-4xl font-title mb-8">Servicios de Identidad Visual</p>
+              <p className="text-lg text-crow-text font-body leading-relaxed">
+                Diseño de logotipos, branding integral, manuales de identidad y aplicaciones en merchandising para construir una imagen coherente y memorable.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
-
+      {/* Galería Branding */}
       <section className="py-20 bg-gradient-to-b from-crow-dark to-crow-primary">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-title text-crow-text mb-12">Proyectos de Branding</h2>
@@ -68,34 +98,30 @@ const IdentidadVisual = () => {
           </div>
         </div>
       </section>
-
-      <ServiceLayout
-        title="Identidad Visual"
-        description="Diseño de logotipos, branding integral, manuales de identidad y aplicaciones en merchandising para construir una imagen coherente y memorable."
-      >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-crow-text font-body">
-          <div className="bg-crow-dark/30 p-6 rounded-lg hover:bg-crow-dark/50 transition-colors">
-            <h3 className="text-xl font-title text-crow-light mb-4">Logotipos y Branding</h3>
-            <ul className="list-disc list-inside space-y-2">
-              <li>Diseño de logotipos e isotipos</li>
-              <li>Desarrollo de identidad corporativa</li>
-              <li>Manuales de identidad visual</li>
-              <li>Rediseño y actualización de marca</li>
-              <li>Diseño de papelería corporativa</li>
-            </ul>
-          </div>
-          <div className="bg-crow-dark/30 p-6 rounded-lg hover:bg-crow-dark/50 transition-colors">
-            <h3 className="text-xl font-title text-crow-light mb-4">Aplicaciones de marca</h3>
-            <ul className="list-disc list-inside space-y-2">
-              <li>Diseño para merchandising</li>
-              <li>Señalética corporativa</li>
-              <li>Redes sociales y medios digitales</li>
-              <li>Uniformes y vestuario</li>
-              <li>Vehículos y elementos corporativos</li>
-            </ul>
+      {/* Otras aplicaciones */}
+      <section className="py-20 bg-gradient-to-b from-crow-primary to-crow-dark">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-title text-crow-text mb-12">Otras aplicaciones de marca</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {otrasAplicaciones.map((project) => (
+              <div
+                key={project.id}
+                className="group relative overflow-hidden rounded-xl shadow-lg transform hover:scale-[1.01] transition-transform bg-crow-dark/60"
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-64 object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-crow-dark/70 p-4">
+                  <h3 className="text-xl font-title text-crow-light">{project.title}</h3>
+                  <p className="text-sm text-crow-text font-body">{project.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </ServiceLayout>
+      </section>
     </div>
   );
 };

@@ -1,98 +1,67 @@
 
-import { Check } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const services = [
   {
     title: "Diseño Publicitario",
-    description: "Creación de carteles, flyers, banners y otros materiales promocionales para potenciar tu mensaje y captar la atención de tu audiencia.",
-    features: [
-      "Carteles y posters",
-      "Flyers y folletos",
-      "Banners digitales",
-      "Material promocional",
-      "Campañas publicitarias"
-    ],
-    path: "/servicios/diseno-publicitario"
+    description: "Carteles, flyers, banners y otros materiales promocionales para potenciar tu mensaje y captar la atención de tu audiencia.",
+    image: "https://i.imgur.com/yd2i87o.jpeg",
+    path: "/servicios/diseno-publicitario",
   },
   {
     title: "Ilustración",
-    description: "Creación de ilustraciones personalizadas para medios digitales y tradicionales, dando vida a tus ideas con un toque artístico único.",
-    features: [
-      "Ilustración digital",
-      "Arte conceptual",
-      "Ilustración editorial",
-      "Personajes",
-      "Estilo personalizado"
-    ],
-    path: "/servicios/ilustracion"
+    description: "Ilustraciones personalizadas para medios digitales y tradicionales, dando vida a tus ideas con un toque artístico único.",
+    image: "https://i.imgur.com/jLYCY2S.jpeg",
+    path: "/servicios/ilustracion",
   },
   {
     title: "Identidad Visual",
-    description: "Diseño de logotipos, branding integral, manuales de identidad y aplicaciones en merchandising para construir una imagen coherente y memorable.",
-    features: [
-      "Logotipos",
-      "Manual de identidad",
-      "Papelería corporativa", 
-      "Aplicaciones de marca",
-      "Branding integral"
-    ],
-    path: "/servicios/identidad-visual"
+    description: "Logotipos, branding integral, manuales de identidad y aplicaciones en merchandising para construir una imagen coherente y memorable.",
+    image: "https://i.imgur.com/rV8pbaq.jpeg",
+    path: "/servicios/identidad-visual",
   },
   {
     title: "Diseño Editorial",
     description: "Maquetación de libros, diseño de portadas, revistas y catálogos para dar forma visual a tus contenidos con estilo y profesionalidad.",
-    features: [
-      "Maquetación de libros",
-      "Diseño de portadas",
-      "Revistas y catálogos",
-      "Informes y documentos",
-      "Publicaciones digitales"
-    ],
-    path: "/servicios/diseno-editorial"
-  }
+    image: "https://i.imgur.com/SLAscDB.jpeg",
+    path: "/servicios/diseno-editorial",
+  },
 ];
 
 const Services = () => (
-  <div className="pt-16">
-    {/* Intro general */}
+  <div className="pt-16 bg-crow-dark text-white min-h-screen">
+    {/* Introducción */}
     <section className="bg-crow-dark text-crow-text py-20">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-title mb-6">
+        <h1 className="text-4xl font-title mb-8">
           Mis <span className="text-crow-light">Servicios</span>
         </h1>
-        <p className="text-xl max-w-2xl mb-8 text-crow-medium">
-          En Illustrator Crow ofrezco soluciones creativas personalizadas para impulsar tus proyectos y comunicar visualmente tus ideas de forma efectiva.
+        <p className="text-xl max-w-2xl mb-8 text-crow-medium font-body">
+          Descubre todas las áreas en las que puedo impulsar tu proyecto. Desde la conceptualización visual hasta la ejecución final, adapto cada solución a tus necesidades.
         </p>
       </div>
     </section>
-
-    {/* Servicios detallados */}
+    {/* Galería de Servicios */}
     <section className="py-20 bg-gradient-to-b from-crow-dark to-crow-primary">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <h2 className="text-3xl font-title text-crow-text mb-12">Áreas de especialidad</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <div
+            <Link
               key={index}
-              className="bg-crow-dark/30 backdrop-blur-sm rounded-lg p-8 transition-all hover:shadow-lg hover:bg-crow-dark/50"
+              to={service.path}
+              className="group relative overflow-hidden rounded-xl shadow-lg transform hover:scale-105 transition-transform bg-crow-dark/60"
             >
-              <h3 className="text-2xl font-title font-bold text-crow-light mb-4">{service.title}</h3>
-              <p className="text-crow-text mb-6">{service.description}</p>
-              <ul className="space-y-3 mb-6">
-                {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center text-crow-text">
-                    <Check className="w-5 h-5 text-crow-light mr-2" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                to={service.path}
-                className="inline-flex items-center gap-2 bg-crow-light/10 hover:bg-crow-light/20 px-4 py-2 rounded-lg transition-colors font-body text-crow-light"
-              >
-                Ver más detalles
-              </Link>
-            </div>
+              <img
+                src={service.image}
+                alt={service.title}
+                className="w-full h-52 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-crow-dark/80 to-transparent p-4 flex flex-col justify-end">
+                <h3 className="text-xl font-title text-crow-light mb-2">{service.title}</h3>
+                <p className="text-sm text-crow-text font-body">{service.description}</p>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
