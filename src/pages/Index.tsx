@@ -1,49 +1,50 @@
+
 import { Link } from "react-router-dom";
 import { ArrowRight, Brush, PaintBucket, Palette, Package, BookOpen } from "lucide-react";
 
+const featuredProjects = [
+  {
+    title: "Mares Creativos",
+    image: "https://i.imgur.com/pgCqphb.jpeg",
+    description: "Línea de merchandising diseñada para el Museo Marítimo del Cantábrico.",
+    path: "/proyectos/mares-creativos",
+  },
+  {
+    title: "La Vida del Besaya",
+    image: "https://i.imgur.com/SLAscDB.jpeg",
+    description: "Paneles e Infografías sobre la historia, fauna y flora de la Senda Fluvial del Besaya.",
+    path: "/proyectos/vida-besaya",
+  },
+];
+
+const services = [
+  {
+    icon: <Brush className="w-8 h-8" />,
+    title: "Diseño Publicitario",
+    description: "Creación de carteles, flyers, banners y otros materiales promocionales para potenciar tu mensaje y captar la atención de tu audiencia.",
+    path: "/servicios/diseno-publicitario",
+  },
+  {
+    icon: <Palette className="w-8 h-8" />,
+    title: "Ilustración",
+    description: "Creación de ilustraciones personalizadas para medios digitales y tradicionales, dando vida a tus ideas con un toque artístico único.",
+    path: "/servicios/ilustracion",
+  },
+  {
+    icon: <Package className="w-8 h-8" />,
+    title: "Identidad Visual",
+    description: "Diseño de logotipos, branding integral, manuales de identidad y aplicaciones en merchandising para construir una imagen coherente y memorable.",
+    path: "/servicios/identidad-visual",
+  },
+  {
+    icon: <BookOpen className="w-8 h-8" />,
+    title: "Diseño Editorial",
+    description: "Maquetación de libros, diseño de portadas, revistas y catálogos para dar forma visual a tus contenidos con estilo y profesionalidad.",
+    path: "/servicios/diseno-editorial",
+  },
+];
+
 const Index = () => {
-  const featuredProjects = [
-    {
-      title: "Mares Creativos",
-      image: "https://i.imgur.com/pgCqphb.jpeg",
-      description: "Línea de merchandising diseñada para el Museo Marítimo del Cantábrico.",
-      path: "/proyectos/mares-creativos",
-    },
-    {
-      title: "La Vida del Besaya",
-      image: "https://i.imgur.com/SLAscDB.jpeg",
-      description: "Paneles e Infografías sobre la historia, fauna y flora de la Senda Fluvial del Besaya.",
-      path: "/proyectos/vida-besaya",
-    },
-  ];
-
-  const services = [
-    {
-      icon: <Brush className="w-8 h-8" />,
-      title: "Diseño Publicitario",
-      description: "Creación de carteles, flyers, banners y otros materiales promocionales para potenciar tu mensaje y captar la atención de tu audiencia.",
-      path: "/servicios/diseno-publicitario",
-    },
-    {
-      icon: <Palette className="w-8 h-8" />,
-      title: "Ilustración",
-      description: "Creación de ilustraciones personalizadas para medios digitales y tradicionales, dando vida a tus ideas con un toque artístico único.",
-      path: "/servicios/ilustracion",
-    },
-    {
-      icon: <Package className="w-8 h-8" />,
-      title: "Identidad Visual",
-      description: "Diseño de logotipos, branding integral, manuales de identidad y aplicaciones en merchandising para construir una imagen coherente y memorable.",
-      path: "/servicios/identidad-visual",
-    },
-    {
-      icon: <BookOpen className="w-8 h-8" />,
-      title: "Diseño Editorial",
-      description: "Maquetación de libros, diseño de portadas, revistas y catálogos para dar forma visual a tus contenidos con estilo y profesionalidad.",
-      path: "/servicios/diseno-editorial",
-    },
-  ];
-
   return (
     <div className="relative">
       {/* Banner */}
@@ -73,7 +74,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Proyectos Destacados - Galería */}
+      {/* Galería de proyectos destacados */}
       <section className="py-20 bg-gradient-to-b from-crow-dark to-crow-primary">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-title text-crow-text mb-12">Proyectos Destacados</h2>
