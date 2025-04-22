@@ -1,31 +1,29 @@
+// src/App.tsx
+import Index from "./pages/Index";
+import Projects from "./pages/Projects";
+import MaresCreativos from "./pages/projects/MaresCreativos";
+import VidaBesaya from "./pages/projects/VidaBesaya";
+
+import Services from "./pages/Services";
+import DisenoPublicitario from "./pages/services/DisenoPublicitario";
+import Ilustracion from "./pages/services/Ilustracion";
+import IdentidadVisual from "./pages/services/IdentidadVisual";
+import DisenoEditorial from "./pages/services/DisenoEditorial";
+
+import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
+import Navbar from "./components/Navbar";
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Index from "./pages/Index";
-import Projects from "./pages/Projects";
-import Services from "./pages/Services";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
-
-// Componentes de servicios
-import DisenoPublicitario from "./pages/services/DisenoPublicitario";
-import Ilustracion from "./pages/services/Ilustracion"; // Importar el nuevo componente
-import IdentidadVisual from "./pages/services/IdentidadVisual";
-import DisenoEditorial from "./pages/services/DisenoEditorial";
-
-// Componentes de proyectos
-import MaresCreativos from "./pages/projects/MaresCreativos";
-import VidaBesaya from "./pages/projects/VidaBesaya";
-
-const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
+  <QueryClientProvider client={new QueryClient()}>
     <TooltipProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/IllustratorCrow">
         <Navbar />
         <Routes>
           {/* Rutas principales */}
@@ -37,7 +35,7 @@ const App = () => (
 
           {/* Rutas de servicios */}
           <Route path="/servicios/diseno-publicitario" element={<DisenoPublicitario />} />
-          <Route path="/servicios/ilustracion" element={<Ilustracion />} /> {/* Nueva ruta */}
+          <Route path="/servicios/ilustracion" element={<Ilustracion />} />
           <Route path="/servicios/identidad-visual" element={<IdentidadVisual />} />
           <Route path="/servicios/diseno-editorial" element={<DisenoEditorial />} />
 
@@ -52,4 +50,4 @@ const App = () => (
   </QueryClientProvider>
 );
 
-export default App;
+export default App; // Añade esta línea para exportar App como valor predeterminado
