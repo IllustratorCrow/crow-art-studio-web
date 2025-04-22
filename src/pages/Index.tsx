@@ -73,7 +73,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Proyectos Destacados */}
+      {/* Proyectos Destacados - Galería */}
       <section className="py-20 bg-gradient-to-b from-crow-dark to-crow-primary">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-title text-crow-text mb-12">Proyectos Destacados</h2>

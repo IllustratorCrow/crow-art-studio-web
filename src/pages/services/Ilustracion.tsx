@@ -1,7 +1,7 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const DisenoGrafico = () => {
+const Ilustracion = () => {
   // Datos de las imágenes de Cartelería
   const carteleriaProjects = [
     {
@@ -64,7 +64,7 @@ const DisenoGrafico = () => {
         {/* Título y descripción */}
         <section className="py-0">
           <Link
-            to="/servicios/ilustracion" // Cambiado para redirigir a /servicios/ilustracion
+            to="/servicios" 
             className="inline-flex items-center gap-2 text-crow-light mb-4 hover:text-crow-medium transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -167,4 +167,4 @@ const DisenoGrafico = () => {
   );
 };
 
-export default DisenoGrafico;
+export default Ilustracion;

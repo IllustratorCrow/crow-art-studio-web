@@ -9,7 +9,7 @@ interface ServiceLayoutProps {
 
 const ServiceLayout = ({ title, description, children }: ServiceLayoutProps) => {
   return (
-    <div className="pt-16">
+    <div>
       <section className="bg-crow-dark text-crow-text min-h-[40vh] flex items-center">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-title mb-4">{title}</h1>

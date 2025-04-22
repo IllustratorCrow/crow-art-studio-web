@@ -1,7 +1,7 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const DisenoGrafico = () => {
+const DisenoPublicitario = () => {
   // Datos de las imágenes de Cartelería
   const carteleriaProjects = [
     {
@@ -167,4 +167,4 @@ const DisenoGrafico = () => {
   );
 };
 
-export default DisenoGrafico;
+export default DisenoPublicitario;
