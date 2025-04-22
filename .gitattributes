@@ -1,0 +1,11 @@
+# Convertir automáticamente los finales de línea para archivos de texto
+* text=auto
+
+# Mantener LF para archivos específicos
+*.css text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.json text eol=lf
+*.html text eol=lf
+*.svg text eol=lf
