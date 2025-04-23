@@ -23,7 +23,7 @@ const Navbar = () => {
           to="/"
           className="flex items-center gap-3 font-title text-2xl tracking-tight text-crow-text hover:opacity-90 transition-opacity"
         >
-          <img src={logoclaro} alt="Illustrator Crow Logo" className="w-9 h-9 drop-shadow-md" />
+          <img src={logoclaro} alt="Illustrator Crow Logo" className="w-6 h-6 drop-shadow-md" />
           Illustrator <span className="text-crow-light">Crow</span>
         </Link>
 

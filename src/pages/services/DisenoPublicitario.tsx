@@ -8,42 +8,42 @@ const carteleriaProjects = [
     title: "Acciones de mejora de la Empleabilidad",
     description:
       "Diseñado para la Agencia de Desarrollo Local de Los Corrales de Buelna, este cartel promueve cursos gratuitos de empleabilidad.",
-    image: "https://i.imgur.com/yd2i87o.jpeg",
+    image: "https://i.imgur.com/TZfRbBT.jpeg",
   },
   {
     id: 2,
     title: "Electric Pulse Fest",
     description:
       "Creado a modo de ejercicio para promocionar un festival ficticio de música electrónica, este cartel comunica la esencia vibrante y futurista del evento.",
-    image: "https://i.imgur.com/jLYCY2S.jpeg",
+    image: "https://i.imgur.com/K7jq4fL.jpeg",
   },
   {
     id: 3,
     title: "Brew & Bloom",
     description:
       "Diseñado a modo de ejercicio para promover la próxima apertura de un café ficticio, este cartel transmite una atmósfera acogedora y moderna.",
-    image: "https://i.imgur.com/rV8pbaq.jpeg",
+    image: "https://i.imgur.com/FdRP3u7.jpeg",
   },
 ];
 
 const publicidadProjects = [
   {
     id: 1,
-    title: "* Ejemplo Flyer *",
-    description: "(Página aún en desarrollo)",
-    image: "https://i.imgur.com/EXAMPLE_IMAGE_1.jpg",
+    title: "Aquí aún no hay nada!",
+    description: "Recuerda que esta página aún esta sin terminar! Ten paciencia. :)",
+    image: "https://i.imgur.com/Zz1JpiE.jpeg",
   },
   {
     id: 2,
-    title: "* Ejemplo Triptico *",
-    description: "(Página aún en desarrollo)",
-    image: "https://i.imgur.com/EXAMPLE_IMAGE_2.jpg",
+    title: "Aquí aún no hay nada!",
+    description: "Recuerda que esta página aún esta sin terminar! Ten paciencia. :)",
+    image: "https://i.imgur.com/Zz1JpiE.jpeg",
   },
   {
     id: 3,
-    title: "* Ejemplo Infografía *",
-    description: "(Página aún en desarrollo)",
-    image: "https://i.imgur.com/EXAMPLE_IMAGE_3.jpg",
+    title: "Aquí aún no hay nada!",
+    description: "Recuerda que esta página aún esta sin terminar! Ten paciencia. :)",
+    image: "https://i.imgur.com/Zz1JpiE.jpeg",
   },
 ];
 
@@ -65,7 +65,7 @@ const DisenoPublicitario = () => {
       <section className="container mx-auto px-4">
         <div className="relative mb-12">
           <img
-            src="https://i.imgur.com/K7jq4fL.jpeg"
+            src="https://i.imgur.com/x8pQuTK.jpeg"
             alt="Diseño Gráfico - Portada"
             className="w-full h-[60vh] object-cover object-[30%_50%] rounded-lg shadow-xl"
           />

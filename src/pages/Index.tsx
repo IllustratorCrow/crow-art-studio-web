@@ -61,13 +61,13 @@ const Index = () => {
               <span className="text-crow-light">Diseño Gráfico</span> con mirada artística
             </h1>
             <p className="text-xl mb-8 text-crow-medium font-body">
-              En Illustrator Crow, creo diseños que equilibran funcionalidad y arte. Desde ilustraciones únicas hasta estrategias visuales efectivas, cada proyecto está diseñado para destacar y generar resultados.
+            Mis diseños buscan equilibrar funcionalidad y arte. Desde ilustraciones únicas hasta estrategias visuales efectivas, cada proyecto está diseñado para destacar.
             </p>
             <Link
               to="/contacto"
               className="inline-flex items-center gap-2 bg-crow-primary hover:bg-crow-medium px-6 py-3 rounded-lg transition-colors font-body"
             >
-              Trabajemos juntos
+              Trabajemos en tu idea!
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>

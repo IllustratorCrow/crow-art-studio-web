@@ -72,13 +72,6 @@ const Contact = () => {
               Estoy deseando saber más sobre tus ideas y cómo puedo ayudarte a
               darles vida.
             </p>
-            <a
-              href="#contact-form"
-              className="inline-flex items-center gap-2 bg-crow-primary hover:bg-crow-medium px-6 py-3 rounded-lg transition-colors font-body"
-            >
-              Escríbeme
-              <Send className="w-5 h-5" />
-            </a>
           </div>
         </div>
       </section>
