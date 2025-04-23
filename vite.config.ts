@@ -26,9 +26,9 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: '/IllustratorCrow/', // ✅ RUTA BASE para GitHub Pages
+  base: '/', // Changed from '/IllustratorCrow/' to '/'
   build: {
-    outDir: 'docs',          // ✅ Publica directo en /docs
+    outDir: 'docs',
     emptyOutDir: true,
   },
 }));

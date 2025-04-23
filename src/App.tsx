@@ -1,3 +1,4 @@
+
 // src/App.tsx
 import Index from "./pages/Index";
 import Projects from "./pages/Projects";
@@ -20,10 +21,13 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+// Create a queryClient instance
+const queryClient = new QueryClient();
+
 const App = () => (
-  <QueryClientProvider client={new QueryClient()}>
+  <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <BrowserRouter basename="/IllustratorCrow">
+      <BrowserRouter basename="/">
         <Navbar />
         <Routes>
           {/* Rutas principales */}
@@ -50,4 +54,4 @@ const App = () => (
   </QueryClientProvider>
 );
 
-export default App; // Añade esta línea para exportar App como valor predeterminado
+export default App;
