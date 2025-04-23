@@ -26,7 +26,7 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: '/', // Changed from '/IllustratorCrow/' to '/'
+  base: './', // Cambiado a './' para rutas relativas
   build: {
     outDir: 'docs',
     emptyOutDir: true,
