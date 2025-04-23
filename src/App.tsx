@@ -19,7 +19,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
+import "./App.css"; // Importamos App.css para asegurarnos de que se apliquen los estilos
 
 // Create a queryClient instance
 const queryClient = new QueryClient();
@@ -27,7 +28,7 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <BrowserRouter basename="">
+      <HashRouter> {/* Cambiado a HashRouter para mejor compatibilidad con GitHub Pages */}
         <Navbar />
         <Routes>
           {/* Rutas principales */}
@@ -47,7 +48,7 @@ const App = () => (
           <Route path="/contacto" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
       <Toaster />
       <Sonner />
     </TooltipProvider>

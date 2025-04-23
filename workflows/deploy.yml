@@ -33,6 +33,7 @@ jobs:
       # Paso para copiar el build a docs
       - name: Move build output to docs/
         run: |
+          mkdir -p docs
           rm -rf docs/*
           cp -r dist/* docs/
 

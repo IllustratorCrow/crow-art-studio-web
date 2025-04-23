@@ -26,9 +26,9 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: './', // Mantenemos rutas relativas
+  base: './', // Aseguramos rutas relativas
   build: {
     outDir: 'docs',
-    emptyOutDir: true,
+    emptyOutDir: false, // Cambiado a false para no borrar archivos importantes como CNAME
   },
 }));
