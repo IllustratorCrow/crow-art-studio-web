@@ -26,7 +26,7 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: './', // Cambiado a './' para rutas relativas
+  base: './', // Mantenemos rutas relativas
   build: {
     outDir: 'docs',
     emptyOutDir: true,
