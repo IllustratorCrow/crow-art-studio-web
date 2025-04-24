@@ -1,5 +1,4 @@
 /* src/pages/Contact.tsx */
-import { useState } from "react";
 import {
   Send,
   Mail,
@@ -11,47 +10,6 @@ import { motion } from "framer-motion";
 
 const Contact = () => {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const mailto = `mailto:illustratorcrow@gmail.com?subject=${encodeURIComponent(
-      formData.subject
-    )}&body=${encodeURIComponent(
-      `Nombre: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
-    )}`;
-
-    window.location.href = mailto;
-
-    toast({
-      title: "Abriendo tu cliente de correo…",
-      description:
-        "Si no se abre automáticamente, verifica que tengas un cliente configurado.",
-    });
-
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
-  };
 
   return (
     <div className="pt-0">
@@ -68,7 +26,7 @@ const Contact = () => {
             <h1 className="text-5xl font-title mb-6">
               Hablemos de tu <span className="text-crow-light">Proyecto</span>
             </h1>
-            <p className="text-xl mb-8 text-crow-medium font-body">
+            <p className="text-xl max-w-2xl text-white font-body">
               Estoy deseando saber más sobre tus ideas y cómo puedo ayudarte a
               darles vida.
             </p>
@@ -155,8 +113,16 @@ const Contact = () => {
 
               <form
                 id="contact-form"
-                onSubmit={handleSubmit}
+                action="https://formspree.io/f/xpwdznqy"
+                method="POST"
                 className="space-y-6"
+                onSubmit={() =>
+                  toast({
+                    title: "Mensaje enviado",
+                    description:
+                      "¡Gracias por contactarme! Te responderé pronto.",
+                  })
+                }
               >
                 <div>
                   <label htmlFor="name" className="block text-crow-text mb-2">
@@ -166,10 +132,8 @@ const Contact = () => {
                     type="text"
                     id="name"
                     name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 bg-crow-dark/50 border border-crow-medium/30 rounded-md text-crow-text focus:outline-none focus:border-crow-light"
                     required
+                    className="w-full px-4 py-2 bg-crow-dark/50 border border-crow-medium/30 rounded-md text-crow-text focus:outline-none focus:border-crow-light"
                   />
                 </div>
 
@@ -181,10 +145,8 @@ const Contact = () => {
                     type="email"
                     id="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 bg-crow-dark/50 border border-crow-medium/30 rounded-md text-crow-text focus:outline-none focus:border-crow-light"
                     required
+                    className="w-full px-4 py-2 bg-crow-dark/50 border border-crow-medium/30 rounded-md text-crow-text focus:outline-none focus:border-crow-light"
                   />
                 </div>
 
@@ -199,10 +161,8 @@ const Contact = () => {
                     type="text"
                     id="subject"
                     name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 bg-crow-dark/50 border border-crow-medium/30 rounded-md text-crow-text focus:outline-none focus:border-crow-light"
                     required
+                    className="w-full px-4 py-2 bg-crow-dark/50 border border-crow-medium/30 rounded-md text-crow-text focus:outline-none focus:border-crow-light"
                   />
                 </div>
 
@@ -216,12 +176,10 @@ const Contact = () => {
                   <textarea
                     id="message"
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
                     rows={4}
-                    className="w-full px-4 py-2 bg-crow-dark/50 border border-crow-medium/30 rounded-md text-crow-text focus:outline-none focus:border-crow-light"
                     required
-                  />
+                    className="w-full px-4 py-2 bg-crow-dark/50 border border-crow-medium/30 rounded-md text-crow-text focus:outline-none focus:border-crow-light"
+                  ></textarea>
                 </div>
 
                 <button
