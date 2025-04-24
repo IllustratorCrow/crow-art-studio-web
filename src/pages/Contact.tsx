@@ -26,9 +26,8 @@ const Contact = () => {
             <h1 className="text-5xl font-title mb-6">
               Hablemos de tu <span className="text-crow-light">Proyecto</span>
             </h1>
-            <p className="text-xl max-w-2xl text-white font-body">
-              Estoy deseando saber más sobre tus ideas y cómo puedo ayudarte a
-              darles vida.
+            <p className="text-xl mb-8 text-crow-medium font-body">
+              Contacta conmigo y trabajemos en tu idea.
             </p>
           </div>
         </div>

@@ -62,7 +62,7 @@ const Services = () => (
     {/* Banner portada */}
     <section className="relative mb-12">
       <img
-        src="https://i.imgur.com/K7jq4fL.jpeg"
+        src="https://i.imgur.com/NAhbSu6.jpeg"
         alt="Portada Mis Servicios"
         className="w-full h-[60vh] object-cover object-[30%_50%] rounded-b-3xl shadow-xl"
       />

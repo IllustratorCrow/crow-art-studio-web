@@ -15,35 +15,7 @@ const projects = [
     description: "Paneles e Infografías sobre la historia, fauna y flora de la Senda Fluvial del Besaya.",
     image: "https://i.imgur.com/SLAscDB.jpeg",
     path: "/proyectos/vida-besaya",
-  },
-  {
-    title: "Aquí aún no hay nada!",
-    category: "Estoy trabajando en ello.",
-    description: "Recuerda que esta página aún esta sin terminar! Ten paciencia. :)",
-    image: "https://i.imgur.com/Zz1JpiE.jpeg",
-    path: "/servicios/aa",
-  },
-  {
-    title: "Aquí aún no hay nada!",
-    category: "Estoy trabajando en ello.",
-    description: "Recuerda que esta página aún esta sin terminar! Ten paciencia. :)",
-    image: "https://i.imgur.com/Zz1JpiE.jpeg",
-    path: "/servicios/ilustracion",
-  },
-  {
-    title: "Aquí aún no hay nada!",
-    category: "Estoy trabajando en ello.",
-    description: "Recuerda que esta página aún esta sin terminar! Ten paciencia. :)",
-    image: "https://i.imgur.com/Zz1JpiE.jpeg",
-    path: "/servicios/identidad-visual",
-  },
-  {
-    title: "Aquí aún no hay nada!",
-    category: "Estoy trabajando en ello.",
-    description: "Recuerda que esta página aún esta sin terminar! Ten paciencia. :)",
-    image: "https://i.imgur.com/Zz1JpiE.jpeg",
-    path: "/servicios/ilustracion",
-  },
+  }
 ];
 
 const Projects = () => (
@@ -51,15 +23,16 @@ const Projects = () => (
     {/* Banner portada */}
     <section className="relative mb-12">
       <img
-        src="https://i.imgur.com/pgCqphb.jpeg"
+        src="https://i.imgur.com/Zwlo1YT.jpeg"
         alt="Portada Mis Proyectos"
         className="w-full h-[60vh] object-cover object-center rounded-b-3xl shadow-xl"
       />
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-crow-dark/90 to-transparent flex items-center rounded-b-3xl">
         <div className="w-full md:w-1/2 p-8">
           <h1 className="text-4xl md:text-5xl font-title mb-6">Mis <span className="text-crow-light">proyectos</span></h1>
-          <p className="text-xl max-w-2xl text-white font-body">
-            Explora una selección de proyectos realizados en diferentes áreas del diseño y la ilustración. Cada trabajo resalta una faceta creativa distinta, adaptada a las necesidades de cada cliente.
+          <p className="text-xl mb-8 text-white font-body">
+            Aquí podrás encontrar un catálogo con mis proyectos personales.
+            Aún hay mucho trabajo por delante, visita la página de nuevo para ir viendo las novedades!
           </p>
         </div>
       </div>

@@ -21,6 +21,10 @@ const MaresCreativos = () => {
     {
       src: "https://i.imgur.com/5LIdjKD.jpeg",
       alt: "Mares Creativos - Taza"
+    },
+    {
+      src: "https://i.imgur.com/e44WMIP.jpeg",
+      alt: "Mares Creativos - Gorros de pesca"
     }
   ];
 
