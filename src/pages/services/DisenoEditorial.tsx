@@ -1,5 +1,5 @@
-
-import { ArrowLeft } from "lucide-react";
+import { useState } from "react";
+import { ArrowLeft, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const editorialProjects = [
@@ -45,8 +45,38 @@ const otrosFormatos = [
 ];
 
 const DisenoEditorial = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const openModal = (imageUrl) => {
+    setSelectedImage(imageUrl);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
+
   return (
-    <div className="pt-16 bg-crow-dark text-white min-h-screen">
+    <div className="pt-16 bg-crow-dark text-white min-h-screen relative">
+      
+      {/* Modal de imagen */}
+      {selectedImage && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+          <div className="relative bg-crow-dark rounded-xl shadow-2xl p-4 max-w-sm w-full mx-4">
+            <button
+              onClick={closeModal}
+              className="absolute top-2 right-2 text-crow-light hover:text-white transition"
+            >
+              <X size={28} />
+            </button>
+            <img
+              src={selectedImage}
+              alt="Vista ampliada"
+              className="w-full h-auto rounded-lg object-contain"
+            />
+          </div>
+        </div>
+      )}
+
       {/* Volver */}
       <section className="py-8 container mx-auto px-4">
         <Link
@@ -57,6 +87,7 @@ const DisenoEditorial = () => {
           Volver a servicios
         </Link>
       </section>
+
       {/* Portada */}
       <section className="container mx-auto px-4">
         <div className="relative mb-12">
@@ -75,7 +106,8 @@ const DisenoEditorial = () => {
           </div>
         </div>
       </section>
-      {/* Galería Editorial */}
+
+      {/* Proyectos Editoriales */}
       <section className="py-20 bg-gradient-to-b from-crow-dark to-crow-primary">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-title text-crow-text mb-12">Proyectos Editoriales</h2>
@@ -83,7 +115,8 @@ const DisenoEditorial = () => {
             {editorialProjects.map((project) => (
               <div
                 key={project.id}
-                className="group relative overflow-hidden rounded-xl shadow-lg transform hover:scale-[1.01] transition-transform bg-crow-dark/60"
+                className="group relative overflow-hidden rounded-xl shadow-lg transform hover:scale-[1.01] transition-transform bg-crow-dark/60 cursor-pointer"
+                onClick={() => openModal(project.image)}
               >
                 <img
                   src={project.image}
@@ -99,6 +132,7 @@ const DisenoEditorial = () => {
           </div>
         </div>
       </section>
+
       {/* Otros formatos */}
       <section className="py-20 bg-gradient-to-b from-crow-primary to-crow-dark">
         <div className="container mx-auto px-4">
@@ -107,7 +141,8 @@ const DisenoEditorial = () => {
             {otrosFormatos.map((project) => (
               <div
                 key={project.id}
-                className="group relative overflow-hidden rounded-xl shadow-lg transform hover:scale-[1.01] transition-transform bg-crow-dark/60"
+                className="group relative overflow-hidden rounded-xl shadow-lg transform hover:scale-[1.01] transition-transform bg-crow-dark/60 cursor-pointer"
+                onClick={() => openModal(project.image)}
               >
                 <img
                   src={project.image}

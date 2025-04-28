@@ -1,5 +1,5 @@
-
-import { ArrowLeft } from "lucide-react";
+import { useState } from "react";
+import { ArrowLeft, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const carteleriaProjects = [
@@ -30,26 +30,43 @@ const publicidadProjects = [
   {
     id: 1,
     title: "Aquí aún no hay nada!",
-    description: "Recuerda que esta página aún esta sin terminar! Ten paciencia. :)",
+    description: "Recuerda que esta página aún está sin terminar! Ten paciencia. :)",
     image: "https://i.imgur.com/Zz1JpiE.jpeg",
-  },
-  {
-    id: 2,
-    title: "Aquí aún no hay nada!",
-    description: "Recuerda que esta página aún esta sin terminar! Ten paciencia. :)",
-    image: "https://i.imgur.com/Zz1JpiE.jpeg",
-  },
-  {
-    id: 3,
-    title: "Aquí aún no hay nada!",
-    description: "Recuerda que esta página aún esta sin terminar! Ten paciencia. :)",
-    image: "https://i.imgur.com/Zz1JpiE.jpeg",
-  },
+  }
 ];
 
 const DisenoPublicitario = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const openModal = (imageUrl) => {
+    setSelectedImage(imageUrl);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
+
   return (
     <div className="pt-16 bg-crow-dark text-white min-h-screen">
+      {/* Modal */}
+      {selectedImage && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+          <div className="relative bg-crow-dark rounded-xl shadow-2xl p-4 max-w-sm w-full mx-4">
+            <button
+              onClick={closeModal}
+              className="absolute top-2 right-2 text-crow-light hover:text-white transition"
+            >
+              <X size={28} />
+            </button>
+            <img
+              src={selectedImage}
+              alt="Vista ampliada"
+              className="w-full max-h-[80vh] h-auto rounded-lg object-contain"
+            />
+          </div>
+        </div>
+      )}
+
       {/* Volver */}
       <section className="py-8 container mx-auto px-4">
         <Link
@@ -93,7 +110,8 @@ const DisenoPublicitario = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-64 object-cover"
+                  onClick={() => openModal(project.image)}
+                  className="w-full h-64 object-cover cursor-pointer"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-crow-dark/70 p-4">
                   <h3 className="text-xl font-title text-crow-light">{project.title}</h3>
@@ -118,7 +136,8 @@ const DisenoPublicitario = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-64 object-cover"
+                  onClick={() => openModal(project.image)}
+                  className="w-full h-64 object-cover cursor-pointer"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-crow-dark/70 p-4">
                   <h3 className="text-xl font-title text-crow-light">{project.title}</h3>
@@ -134,4 +153,3 @@ const DisenoPublicitario = () => {
 };
 
 export default DisenoPublicitario;
-
