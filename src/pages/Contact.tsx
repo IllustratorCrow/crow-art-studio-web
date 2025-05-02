@@ -1,4 +1,3 @@
-/* src/pages/Contact.tsx */
 import {
   Send,
   Mail,
@@ -10,6 +9,15 @@ import { motion } from "framer-motion";
 
 const Contact = () => {
   const { toast } = useToast();
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    toast({
+      title: "Mensaje enviado",
+      description: "¡Gracias por contactarme! Te responderé pronto.",
+    });
+    e.currentTarget.submit();
+  };
 
   return (
     <div className="pt-0">
@@ -33,10 +41,10 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Formulario + info */}
+      {/* Formulario + Info */}
       <section className="py-20 bg-gradient-to-b from-crow-dark to-crow-primary">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Información de contacto */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -115,13 +123,7 @@ const Contact = () => {
                 action="https://formspree.io/f/xpwdznqy"
                 method="POST"
                 className="space-y-6"
-                onSubmit={() =>
-                  toast({
-                    title: "Mensaje enviado",
-                    description:
-                      "¡Gracias por contactarme! Te responderé pronto.",
-                  })
-                }
+                onSubmit={handleSubmit}
               >
                 <div>
                   <label htmlFor="name" className="block text-crow-text mb-2">
@@ -150,10 +152,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="subject"
-                    className="block text-crow-text mb-2"
-                  >
+                  <label htmlFor="subject" className="block text-crow-text mb-2">
                     Asunto
                   </label>
                   <input
@@ -166,10 +165,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-crow-text mb-2"
-                  >
+                  <label htmlFor="message" className="block text-crow-text mb-2">
                     Mensaje
                   </label>
                   <textarea
