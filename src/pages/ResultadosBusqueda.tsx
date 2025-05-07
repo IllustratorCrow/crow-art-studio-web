@@ -1,0 +1,41 @@
+import { useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+const ResultadosBusqueda = () => {
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get("q") || "";
+  const [resultados, setResultados] = useState<string[]>([]);
+
+  useEffect(() => {
+    // Aquí deberías reemplazar esta lógica con tu búsqueda real
+    if (query) {
+      const resultadosFalsos = [
+        "Resultado 1 relacionado con " + query,
+        "Resultado 2 para " + query,
+        "Otra entrada sobre " + query,
+      ];
+      setResultados(resultadosFalsos);
+    }
+  }, [query]);
+
+  return (
+    <div className="container mx-auto mt-20 px-4 text-crow-text">
+      <h1 className="text-2xl font-bold mb-4">
+        Resultados para: <span className="text-crow-light">"{query}"</span>
+      </h1>
+      {resultados.length > 0 ? (
+        <ul className="space-y-3">
+          {resultados.map((item, index) => (
+            <li key={index} className="bg-crow-dark p-4 rounded shadow border border-crow-medium/30">
+              {item}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="text-crow-medium">No se encontraron resultados.</p>
+      )}
+    </div>
+  );
+};
+
+export default ResultadosBusqueda;

@@ -19,19 +19,25 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HashRouter, Routes, Route } from "react-router-dom";
-import "./App.css"; // Importamos App.css para asegurarnos de que se apliquen los estilos
+import "./App.css";
 
-// Importamos ScrollToTop
-import ScrollToTop from "./components/scrollToTop"; // Asegúrate de importar el archivo
+// Scroll
+import ScrollToTop from "./components/scrollToTop";
 
-// Crear una instancia de queryClient
+// Blogs
+import HistoriaDelArteIndex from "./pages/blogs/historia-del-arte/Index";
+import Capitulo1 from "./pages/blogs/historia-del-arte/01-arte-prehistorico";
+
+// Resultados de búsqueda
+import Buscar from "./pages/Buscar"; // ✅ Importación corregida
+
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <HashRouter> {/* Cambiado a HashRouter para mejor compatibilidad con GitHub Pages */}
-        <ScrollToTop /> {/* Coloca ScrollToTop aquí */}
+      <HashRouter>
+        <ScrollToTop />
         <Navbar />
         <Routes>
           {/* Rutas principales */}
@@ -46,6 +52,13 @@ const App = () => (
           <Route path="/servicios/ilustracion" element={<Ilustracion />} />
           <Route path="/servicios/identidad-visual" element={<IdentidadVisual />} />
           <Route path="/servicios/diseno-editorial" element={<DisenoEditorial />} />
+
+          {/* Rutas de blogs */}
+          <Route path="/blogs/historia-del-arte" element={<HistoriaDelArteIndex />} />
+          <Route path="/blogs/historia-del-arte/01-arte-prehistorico" element={<Capitulo1 />} />
+
+          {/* Ruta de búsqueda */}
+          <Route path="/buscar" element={<Buscar />} /> {/* ✅ Correcta */}
 
           {/* Otras rutas */}
           <Route path="/contacto" element={<Contact />} />

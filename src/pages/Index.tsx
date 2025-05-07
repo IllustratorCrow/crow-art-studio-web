@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Brush, PaintBucket, Palette, Package, BookOpen } from "lucide-react";
+import { ArrowRight, Brush, Palette, Package, BookOpen } from "lucide-react";
 
 const featuredProjects = [
   {
@@ -73,7 +73,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Galería de proyectos destacados */}
+      {/* Proyectos Destacados */}
       <section className="py-16 sm:py-20 bg-gradient-to-b from-crow-dark to-crow-primary">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl sm:text-4xl font-title text-crow-text mb-8 sm:mb-12 text-center sm:text-left">
@@ -101,8 +101,36 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Series de Blogs */}
+      <section className="py-16 sm:py-20 bg-gradient-to-b from-crow-primary to-crow-dark">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl sm:text-4xl font-title text-crow-text mb-8 sm:mb-12 text-center sm:text-left">
+            Series de Blogs
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+            <Link
+              to="/blogs/historia-del-arte"
+              className="group relative overflow-hidden rounded-xl shadow-lg hover:scale-[1.01] transform transition-transform"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1577049090931-f8ae58117bdd?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Historia del Arte"
+                className="w-full h-60 object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-crow-dark/70 p-4">
+                <h3 className="text-xl font-title text-crow-light">Historia del Arte</h3>
+                <p className="text-sm text-crow-text">
+                  Una serie que recorre las principales etapas del arte a lo largo de la historia.
+                </p>
+              </div>
+            </Link>
+            {/* Agrega más series aquí cuando lo necesites */}
+          </div>
+        </div>
+      </section>
+
       {/* Servicios */}
-      <section className="py-16 sm:py-20 bg-crow-primary">
+      <section className="py-16 sm:py-20 bg-gradient-to-b from-crow-dark to-crow-primary">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl sm:text-4xl font-title text-crow-text mb-8 sm:mb-12 text-center sm:text-left">
             ¿Qué ofrezco?

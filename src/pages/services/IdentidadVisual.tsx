@@ -102,7 +102,7 @@ const IdentidadVisual = () => {
           <img
             src="https://i.imgur.com/pgCqphb.jpeg"
             alt="Identidad Visual - Portada"
-            className="w-full min-h-[50vh] sm:min-h-[60vh] object-cover object-center rounded-lg shadow-xl"
+            className="w-full h-[40vh] sm:h-[50vh] md:h-[60vh] object-cover object-[30%_50%] rounded-lg shadow-xl"
           />
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-crow-dark/90 to-transparent flex items-center">
             <div className="w-full md:w-1/2 p-4 sm:p-6">
