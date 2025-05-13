@@ -30,8 +30,7 @@ const Projects = () => (
         <div className="w-full md:w-1/2 p-6 sm:p-8">
           <h1 className="text-3xl sm:text-5xl font-title mb-4 sm:mb-6">Mis <span className="text-crow-light">proyectos</span></h1>
           <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-white font-body">
-            Aquí podrás encontrar un catálogo con mis proyectos personales.
-            Aún hay mucho trabajo por delante, visita la página de nuevo para ir viendo las novedades!
+          Aquí encontrarás una selección de mis proyectos más representativos, donde el diseño gráfico y la ilustración se combinan para dar forma a piezas funcionales, creativas y con identidad.
           </p>
         </div>
       </div>

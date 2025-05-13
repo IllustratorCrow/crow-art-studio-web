@@ -1,6 +1,33 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Brush, Palette, Package, BookOpen } from "lucide-react";
 
+const services = [
+  {
+    icon: <Brush className="w-8 h-8" />,
+    title: "Diseño gráfico para publicidad",
+    description: "Diseño de carteles, flyers y banners para comunicar tu mensaje con claridad, captar la atención y potenciar tu visibilidad.",
+    path: "/servicios/diseno-publicitario",
+  },
+  {
+    icon: <Palette className="w-8 h-8" />,
+    title: "Ilustración",
+    description: "Ilustraciones digitales y tradicionales que transforman tus ideas en piezas únicas, perfectas para editoriales, marcas o proyectos personales.",
+    path: "/servicios/ilustracion",
+  },
+  {
+    icon: <Package className="w-8 h-8" />,
+    title: "Branding e identidad visual para marcas",
+    description: "Creación de logotipos, branding integral y manuales visuales que hacen que tu marca sea reconocible, coherente y profesional.",
+    path: "/servicios/identidad-visual",
+  },
+  {
+    icon: <BookOpen className="w-8 h-8" />,
+    title: "Maquetación editorial",
+    description: "Maquetación de libros, portadas, revistas y catálogos con estilo y estructura, listos para impresión o publicación digital.",
+    path: "/servicios/diseno-editorial",
+  },
+];
+
 const featuredProjects = [
   {
     title: "Mares Creativos",
@@ -16,32 +43,6 @@ const featuredProjects = [
   },
 ];
 
-const services = [
-  {
-    icon: <Brush className="w-8 h-8" />,
-    title: "Diseño Publicitario",
-    description: "Creación de carteles, flyers, banners y otros materiales promocionales para potenciar tu mensaje y captar la atención de tu audiencia.",
-    path: "/servicios/diseno-publicitario",
-  },
-  {
-    icon: <Palette className="w-8 h-8" />,
-    title: "Ilustración",
-    description: "Creación de ilustraciones personalizadas para medios digitales y tradicionales, dando vida a tus ideas con un toque artístico único.",
-    path: "/servicios/ilustracion",
-  },
-  {
-    icon: <Package className="w-8 h-8" />,
-    title: "Identidad Visual",
-    description: "Diseño de logotipos, branding integral, manuales de identidad y aplicaciones en merchandising para construir una imagen coherente y memorable.",
-    path: "/servicios/identidad-visual",
-  },
-  {
-    icon: <BookOpen className="w-8 h-8" />,
-    title: "Diseño Editorial",
-    description: "Maquetación de libros, diseño de portadas, revistas y catálogos para dar forma visual a tus contenidos con estilo y profesionalidad.",
-    path: "/servicios/diseno-editorial",
-  },
-];
 
 const Index = () => {
   return (
@@ -60,71 +61,16 @@ const Index = () => {
               <span className="text-crow-light">Diseño Gráfico</span> con mirada artística
             </h1>
             <p className="text-lg sm:text-xl mb-8 text-crow-medium font-body">
-              Mis diseños buscan equilibrar funcionalidad y arte. Desde ilustraciones únicas hasta estrategias visuales efectivas, cada proyecto está diseñado para destacar.
+            Soy diseñadora freelance con experiencia en diseño publicitario,<br /> branding visual e ilustración.<br /><br />
+            Integro ilustración personalizada como parte del proceso creativo<br />para dar vida a piezas auténticas y memorables.
             </p>
             <Link
               to="/contacto"
               className="inline-flex items-center gap-2 bg-crow-primary hover:bg-crow-medium px-6 py-3 rounded-lg transition-colors font-body text-base sm:text-lg"
             >
-              Trabajemos en tu idea!
+              Hablemos de tu diseño!
               <ArrowRight className="w-5 h-5" />
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Proyectos Destacados */}
-      <section className="py-16 sm:py-20 bg-gradient-to-b from-crow-dark to-crow-primary">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl sm:text-4xl font-title text-crow-text mb-8 sm:mb-12 text-center sm:text-left">
-            Proyectos Destacados
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
-            {featuredProjects.map((project, index) => (
-              <Link
-                key={index}
-                to={project.path}
-                className="group relative overflow-hidden rounded-xl shadow-lg hover:scale-[1.01] transform transition-transform"
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-60 sm:h-64 object-cover"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-crow-dark/70 p-4">
-                  <h3 className="text-lg sm:text-xl font-title text-crow-light">{project.title}</h3>
-                  <p className="text-sm text-crow-text font-body">{project.description}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Series de Blogs */}
-      <section className="py-16 sm:py-20 bg-gradient-to-b from-crow-primary to-crow-dark">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl sm:text-4xl font-title text-crow-text mb-8 sm:mb-12 text-center sm:text-left">
-            Series de Blogs
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
-            <Link
-              to="/blogs/historia-del-arte"
-              className="group relative overflow-hidden rounded-xl shadow-lg hover:scale-[1.01] transform transition-transform"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1577049090931-f8ae58117bdd?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Historia del Arte"
-                className="w-full h-60 object-cover"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-crow-dark/70 p-4">
-                <h3 className="text-xl font-title text-crow-light">Historia del Arte</h3>
-                <p className="text-sm text-crow-text">
-                  Una serie que recorre las principales etapas del arte a lo largo de la historia.
-                </p>
-              </div>
-            </Link>
-            {/* Agrega más series aquí cuando lo necesites */}
           </div>
         </div>
       </section>
@@ -155,6 +101,62 @@ const Index = () => {
                 </Link>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Proyectos Destacados */}
+      <section className="py-16 sm:py-20 bg-gradient-to-b from-crow-primary to-crow-dark">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl sm:text-4xl font-title text-crow-text mb-8 sm:mb-12 text-center sm:text-left">
+            Proyectos Destacados
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+            {featuredProjects.map((project, index) => (
+              <Link
+                key={index}
+                to={project.path}
+                className="group relative overflow-hidden rounded-xl shadow-lg hover:scale-[1.01] transform transition-transform"
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-60 sm:h-64 object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-crow-dark/70 p-4">
+                  <h3 className="text-lg sm:text-xl font-title text-crow-light">{project.title}</h3>
+                  <p className="text-sm text-crow-text font-body">{project.description}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Series de Blogs */}
+      <section className="py-16 sm:py-20 bg-gradient-to-b from-crow-dark to-crow-primary">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl sm:text-4xl font-title text-crow-text mb-8 sm:mb-12 text-center sm:text-left">
+            Series de Blogs
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+            <Link
+              to="/blogs/historia-del-arte"
+              className="group relative overflow-hidden rounded-xl shadow-lg hover:scale-[1.01] transform transition-transform"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1577049090931-f8ae58117bdd?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Historia del Arte"
+                className="w-full h-60 object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-crow-dark/70 p-4">
+                <h3 className="text-xl font-title text-crow-light">Historia del Arte</h3>
+                <p className="text-sm text-crow-text">
+                  Una serie que recorre las principales etapas del arte a lo largo de la historia.
+                </p>
+              </div>
+            </Link>
+            {/* Agrega más series aquí cuando lo necesites */}
           </div>
         </div>
       </section>
