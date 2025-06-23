@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowLeft, X } from "lucide-react";
+import { ArrowLeft, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const ilustracionProjects = [
@@ -27,22 +27,69 @@ const otrosFormatos = [
   {
     id: 1,
     title: "Aquí aún no hay nada!",
-    description: " ",
-    image: "https://i.imgur.com/Zz1JpiE.jpeg",
-  },
-  {
-    id: 2,
-    title: "Aquí aún no hay nada!",
-    description: " ",
-    image: "https://i.imgur.com/Zz1JpiE.jpeg",
-  },
-  {
-    id: 3,
-    title: "Aquí aún no hay nada!",
-    description: " ",
+    description: "Recuerda que esta página aún está sin terminar! Ten paciencia. :)",
     image: "https://i.imgur.com/Zz1JpiE.jpeg",
   },
 ];
+
+const GallerySlider = ({ projects, onImageClick }) => {
+  const [startIndex, setStartIndex] = useState(0);
+  const visibleCount = 3;
+
+  const nextSlide = () => {
+    if (startIndex + visibleCount < projects.length) {
+      setStartIndex(startIndex + 1);
+    }
+  };
+
+  const prevSlide = () => {
+    if (startIndex > 0) {
+      setStartIndex(startIndex - 1);
+    }
+  };
+
+  const visibleProjects = projects.slice(startIndex, startIndex + visibleCount);
+
+  return (
+    <div>
+      <div className="flex justify-between items-center mb-6">
+        <button
+          onClick={prevSlide}
+          disabled={startIndex === 0}
+          className="text-crow-light disabled:opacity-30"
+        >
+          <ChevronLeft size={32} />
+        </button>
+        <button
+          onClick={nextSlide}
+          disabled={startIndex + visibleCount >= projects.length}
+          className="text-crow-light disabled:opacity-30"
+        >
+          <ChevronRight size={32} />
+        </button>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {visibleProjects.map((project) => (
+          <div
+            key={project.id}
+            className="group relative overflow-hidden rounded-xl shadow-lg transform hover:scale-[1.01] transition-transform bg-crow-dark/60"
+          >
+            <img
+              src={project.image}
+              alt={project.title}
+              onClick={() => onImageClick(project.image)}
+              className="w-full h-64 object-cover cursor-pointer"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-crow-dark/70 p-4">
+              <h3 className="text-xl font-title text-crow-light">{project.title}</h3>
+              <p className="text-sm text-crow-text font-body">{project.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const Ilustracion = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -114,25 +161,7 @@ const Ilustracion = () => {
       <section className="py-16 sm:py-20 bg-gradient-to-b from-crow-dark to-crow-primary">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-title text-crow-text mb-12">Ilustraciones Digitales</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {ilustracionProjects.map((project) => (
-              <div
-                key={project.id}
-                className="group relative overflow-hidden rounded-xl shadow-lg transform hover:scale-[1.01] transition-transform bg-crow-dark/60"
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  onClick={() => openModal(project.image)}
-                  className="w-full h-64 object-cover cursor-pointer"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-crow-dark/70 p-4">
-                  <h3 className="text-xl font-title text-crow-light">{project.title}</h3>
-                  <p className="text-sm text-crow-text font-body">{project.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <GallerySlider projects={ilustracionProjects} onImageClick={openModal} />
         </div>
       </section>
 
@@ -140,25 +169,7 @@ const Ilustracion = () => {
       <section className="py-16 sm:py-20 bg-gradient-to-b from-crow-primary to-crow-dark">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-title text-crow-text mb-12">Medios Tradicionales</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {otrosFormatos.map((project) => (
-              <div
-                key={project.id}
-                className="group relative overflow-hidden rounded-xl shadow-lg transform hover:scale-[1.01] transition-transform bg-crow-dark/60"
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  onClick={() => openModal(project.image)}
-                  className="w-full h-64 object-cover cursor-pointer"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-crow-dark/70 p-4">
-                  <h3 className="text-xl font-title text-crow-light">{project.title}</h3>
-                  <p className="text-sm text-crow-text font-body">{project.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <GallerySlider projects={otrosFormatos} onImageClick={openModal} />
         </div>
       </section>
     </div>

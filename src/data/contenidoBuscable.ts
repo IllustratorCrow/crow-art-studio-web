@@ -1,65 +1,156 @@
 export const contenidoBuscable = [
-    // Proyectos
-    {
-      title: "Mares Creativos",
-      url: "/proyectos/mares-creativos",
-      keywords: ["proyecto", "proyectos", "mares", "creativos", "diseño"],
-    },
-    {
-      title: "La vida del Besaya",
-      url: "/proyectos/vida-besaya",
-      keywords: ["proyecto", "proyectos", "besaya", "naturaleza", "identidad"],
-    },
-  
-    // Servicios
-    {
-      title: "Diseño Publicitario",
-      url: "/servicios/diseno-publicitario",
-      keywords: ["servicio", "publicidad", "anuncios", "gráfico"],
-    },
-    {
-      title: "Ilustración",
-      url: "/servicios/ilustracion",
-      keywords: ["dibujos", "arte", "servicio", "ilustraciones"],
-    },
-    {
-      title: "Identidad Visual",
-      url: "/servicios/identidad-visual",
-      keywords: ["marca", "branding", "servicio", "logo"],
-    },
-    {
-      title: "Diseño Editorial",
-      url: "/servicios/diseno-editorial",
-      keywords: ["libros", "revistas", "editorial", "servicio"],
-    },
-  
-    // Blog
-    {
-      title: "Historia del Arte: Índice",
-      url: "/blogs/historia-del-arte",
-      keywords: ["blog", "historia", "arte", "índice", "capítulos"],
-    },
-    {
-      title: "Historia del Arte: Arte Prehistórico",
-      url: "/blogs/historia-del-arte/01-arte-prehistorico",
-      keywords: ["prehistoria", "arte", "historia"],
-    },
-    {
-      title: "Historia del Arte: Renacimiento",
-      url: "/blogs/historia-del-arte/renacimiento",
-      keywords: ["renacimiento", "blog", "historia", "arte"],
-    },
-    {
-      title: "Historia del Arte: Prerrafaelismo",
-      url: "/blogs/historia-del-arte/prerrafaelismo",
-      keywords: ["prerrafaelismo", "historia", "arte", "blog"],
-    },
-  
-    // Contacto
-    {
-      title: "Contacto",
-      url: "/contacto",
-      keywords: ["email", "formulario", "contacto", "hablar"],
-    },
-  ];
-  
+  // Proyectos
+  {
+    title: "Mares Creativos",
+    url: "/proyectos/mares-creativos",
+    keywords: [
+      "mares creativos",
+      "proyecto",
+      "proyectos",
+      "diseño",
+      "ilustración",
+      "fin de grado",
+      "merchandising museo",
+      "productos museo marítimo",
+      "museo marítimo del cantábrico",
+      "souvenirs",
+      "sardina de dos cabezas",
+      "fauna marina",
+      "vida marina",
+      "bolsa ilustrada",
+      "taza océano",
+      "caja diseño",
+      "gorros pesca",
+      "ecología",
+      "conservación marina",
+      "cantábrico",
+      "azul océano",
+      "turquesa",
+      "proyecto sostenible",
+      "arte marino",
+      "diseño gráfico",
+      "packaging ilustrado",
+      "productos ilustrados",
+      "regalos museo",
+      "conciencia ambiental"
+    ],
+  },
+{
+  title: "La vida del Besaya",
+  url: "/proyectos/vida-besaya",
+  keywords: [
+    "la vida del besaya",
+    "proyecto",
+    "proyectos",
+    "rio besaya",
+    "besaya",
+    "naturaleza",
+    "paisaje",
+    "identidad visual",
+    "medio ambiente",
+    "conciencia ecológica",
+    "ecosistemas",
+    "biodiversidad",
+    "flora y fauna",
+    "ilustración de naturaleza",
+    "diseño gráfico",
+    "río cantabria",
+    "sostenibilidad",
+    "territorio",
+    "valle del besaya",
+    "inspiración natural",
+    "diseño ecológico",
+    "proyecto artístico",
+    "proyecto naturalista",
+    "paisajismo gráfico",
+    "educación ambiental",
+    "interpretación del paisaje",
+    "cultura cántabra",
+    "estilo naturalista",
+    "colores de la naturaleza",
+    "ilustración ambiental"
+  ],
+},
+
+  // Servicios
+{
+  title: "Diseño Publicitario",
+  url: "/servicios/diseno-publicitario",
+  keywords: [
+    "diseño publicitario",
+    "publicidad",
+    "anuncios",
+    "servicio",
+    "gráfico",
+    "diseño gráfico",
+    "marketing visual",
+    "carteles",
+    "flyers",
+    "promoción",
+    "branding",
+    "comunicación visual",
+    "diseño de campañas",
+    "anuncio impreso",
+    "creatividad publicitaria",
+    "visual merchandising",
+    "impacto visual",
+    "material promocional",
+    "gráfica comercial",
+    "diseño corporativo",
+    "mensaje visual",
+    "ilustración publicitaria",
+    "estrategia gráfica",
+    "difusión de marca",
+    "presentaciones visuales",
+    "diseño para empresas",
+    "arte comercial",
+    "estética de marca",
+    "visibilidad de producto"
+  ],
+},
+
+  {
+    title: "Ilustración",
+    url: "/servicios/ilustracion",
+    keywords: ["dibujos", "arte", "servicio", "ilustraciones"],
+  },
+  {
+    title: "Identidad Visual",
+    url: "/servicios/identidad-visual",
+    keywords: ["marca", "branding", "servicio", "logo"],
+  },
+  {
+    title: "Diseño Editorial",
+    url: "/servicios/diseno-editorial",
+    keywords: ["libros", "revistas", "editorial", "servicio"],
+  },
+
+  // Blog
+  {
+    title: "Historia del Arte: Índice",
+    url: "/blogs/historia-del-arte",
+    keywords: ["blog", "historia", "arte", "índice", "capítulos"],
+  },
+  {
+    title: "Historia del Arte: Arte Prehistórico",
+    url: "/blogs/historia-del-arte/01-arte-prehistorico",
+    keywords: ["prehistoria", "arte", "historia"],
+  },
+  {
+    title: "Historia del Arte: Renacimiento",
+    url: "/blogs/historia-del-arte/renacimiento",
+    keywords: ["renacimiento", "blog", "historia", "arte"],
+  },
+  {
+    title: "Historia del Arte: Prerrafaelismo",
+    url: "/blogs/historia-del-arte/prerrafaelismo",
+    keywords: ["prerrafaelismo", "historia", "arte", "blog"],
+  },
+
+  // Contacto
+  {
+    title: "Contacto",
+    url: "/contacto",
+    keywords: ["email", "formulario", "contacto", "hablar"],
+  },
+];

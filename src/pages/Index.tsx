@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Brush, Palette, Package, BookOpen } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
+// Constante de SERVICIOS
 const services = [
   {
     icon: <Brush className="w-8 h-8" />,
@@ -28,6 +33,21 @@ const services = [
   },
 ];
 
+// Constante de NOVEDADES
+const novedades = [
+  {
+    title: "Nuevas tarjetas de Illustrator Crow!",
+    description: "El negocio por fin cuenta con tarjetas propias. :)",
+    image: "https://i.imgur.com/ARBRWmC.jpeg",
+  },
+  {
+    title: "Acciones de mejora de la empleabilidad",
+    description: "He tenido el gusto de trabajar con el Ayuntamiento de Los Corrales de Buelna para hacer este cartel.",
+    image: "https://i.imgur.com/eJFRLb6.jpeg",
+  },
+];
+
+// Constante de PROYECTOS
 const featuredProjects = [
   {
     title: "Mares Creativos",
@@ -43,6 +63,25 @@ const featuredProjects = [
   },
 ];
 
+// Constante de COLABORADORES
+const colaboradores = [
+  {
+    name: "Gobierno de Cantabria",
+    logo: "https://i.imgur.com/K3WVRN3.png", 
+    link: "https://www.cantabria.es/web/consejeria-de-industria#",
+  },
+  {
+    name: "Lanzaderas de Empleo Cantabria",
+    logo: "https://i.imgur.com/30HgIF9.png",
+    link: "https://empleacantabria.es/lanzaderas-de-empleo",
+  },
+    {
+    name: "Servicio Cantabro de Empleo",
+    logo: "https://i.imgur.com/riAktDU.png",
+    link: "https://empleacantabria.es",
+  },
+];
+
 
 const Index = () => {
   return (
@@ -50,9 +89,7 @@ const Index = () => {
       {/* Banner */}
       <section
         className="bg-crow-dark text-crow-text min-h-[80vh] flex items-center bg-cover bg-center bg-no-repeat relative"
-        style={{
-          backgroundImage: 'url("https://i.imgur.com/Zz1JpiE.jpeg")',
-        }}
+        style={{ backgroundImage: 'url("https://i.imgur.com/Zz1JpiE.jpeg")' }}
       >
         <div className="absolute inset-0 bg-crow-dark/70"></div>
         <div className="container mx-auto px-4 relative z-10">
@@ -61,8 +98,8 @@ const Index = () => {
               <span className="text-crow-light">Diseño Gráfico</span> con mirada artística
             </h1>
             <p className="text-lg sm:text-xl mb-8 text-crow-medium font-body">
-            Soy diseñadora freelance con experiencia en diseño publicitario,<br /> branding visual e ilustración.<br /><br />
-            Integro ilustración personalizada como parte del proceso creativo<br />para dar vida a piezas auténticas y memorables.
+              Soy diseñadora freelance con experiencia en diseño publicitario,<br /> branding visual e ilustración.<br /><br />
+              Integro ilustración personalizada como parte del proceso creativo.
             </p>
             <Link
               to="/contacto"
@@ -105,8 +142,65 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Proyectos Destacados */}
+          
+      {/* Novedades (Slider) */}
       <section className="py-16 sm:py-20 bg-gradient-to-b from-crow-primary to-crow-dark">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl sm:text-4xl font-title text-crow-text mb-8 sm:mb-12 text-center sm:text-left">
+            Novedades
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8"></div>
+
+          <div className="mx-auto max-w-3xl relative">
+            <Swiper
+              modules={[Navigation, Autoplay]}
+              navigation
+              autoplay={{ delay: 5000 }}
+              loop
+              className="rounded-xl overflow-hidden h-[28rem]"
+            >
+              {novedades.map((item, index) => (
+                <SwiperSlide key={index}>
+                  <div className="relative h-full">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 bg-crow-dark/70 p-4">
+                      <h3 className="text-xl font-title text-crow-light">{item.title}</h3>
+                      <p className="text-sm text-crow-text">{item.description}</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            {/* Flechas personalizadas */}
+            <style>
+              {`
+                .swiper-button-next,
+                .swiper-button-prev {
+                  color: white;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  width: 2rem;
+                  height: 2rem;
+                }
+                .swiper-button-next::after,
+                .swiper-button-prev::after {
+                  font-size: 1.5rem;
+                  font-weight: bold;
+                }
+              `}
+            </style>
+          </div>
+        </div>
+      </section>
+
+
+      {/* Proyectos Destacados */}
+      <section className="py-16 sm:py-20 bg-gradient-to-b from-crow-dark to-crow-primary">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl sm:text-4xl font-title text-crow-text mb-8 sm:mb-12 text-center sm:text-left">
             Proyectos Destacados
@@ -134,7 +228,7 @@ const Index = () => {
       </section>
 
       {/* Series de Blogs */}
-      <section className="py-16 sm:py-20 bg-gradient-to-b from-crow-dark to-crow-primary">
+      <section className="py-16 sm:py-20 bg-gradient-to-b from-crow-primary to-crow-dark">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl sm:text-4xl font-title text-crow-text mb-8 sm:mb-12 text-center sm:text-left">
             Series de Blogs
@@ -156,7 +250,32 @@ const Index = () => {
                 </p>
               </div>
             </Link>
-            {/* Agrega más series aquí cuando lo necesites */}
+          </div>
+        </div>
+      </section>
+
+      {/* Entes Colaboradores */}
+      <section className="py-16 sm:py-20 bg-gradient-to-b from-crow-dark to-crow-dark">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl sm:text-4xl font-title text-crow-text mb-8 text-center sm:text-left">
+            Entes Colaboradores
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-0 items-center">
+            {colaboradores.map((colaborador, index) => (
+              <a
+                key={index}
+                href={colaborador.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-full h-full p-0 m-0"
+              >
+              <img
+                src={colaborador.logo}
+                alt={colaborador.name}
+                className="h-[100px] object-contain mx-0 my-0"
+              />
+              </a>
+            ))}
           </div>
         </div>
       </section>

@@ -1,30 +1,31 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
 const MaresCreativos = () => {
   const projectImages = [
     {
-      src: "https://i.imgur.com/Y5QhRa5.jpeg",
-      alt: "Mares Creativos - Bolsa"
+      image: "https://i.imgur.com/Y5QhRa5.jpeg",
+      title: "",
+      description: "Totebag | Illustración de Ballena"
     },
     {
-      src: "https://i.imgur.com/3l6KQN2.jpeg",
-      alt: "Mares Creativos - Caja"
+      image: "https://i.imgur.com/3l6KQN2.jpeg",
+      title: "",
+      description: "Packaging | Illustración de Sardina de dos cabezas"
     },
     {
-      src: "https://i.imgur.com/5LIdjKD.jpeg",
-      alt: "Mares Creativos - Taza"
+      image: "https://i.imgur.com/5LIdjKD.jpeg",
+      title: "",
+      description: "Taza | Illustración de Tiburón ballena"
     },
     {
-      src: "https://i.imgur.com/e44WMIP.jpeg",
-      alt: "Mares Creativos - Gorros de pesca"
+      image: "https://i.imgur.com/e44WMIP.jpeg",
+      title: "",
+      description: "Gorro de pesca | Illustración de pulpo y de cangrejo"
     }
   ];
 
@@ -50,15 +51,15 @@ const MaresCreativos = () => {
           <h1 className="text-3xl sm:text-4xl font-title mb-8">Mares Creativos</h1>
 
           <div className="relative rounded-lg overflow-hidden shadow-xl mb-12">
-            <img 
-              src="https://i.imgur.com/pgCqphb.jpeg" 
+            <img
+              src="https://i.imgur.com/pgCqphb.jpeg"
               alt="Mares Creativos - Portada"
               className="w-full h-[50vh] md:h-[60vh] object-cover object-[30%_50%]"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-crow-dark/90 to-transparent flex items-center">
               <div className="w-full md:w-1/2 p-4 sm:p-6">
                 <p className="text-base sm:text-lg text-crow-text font-body leading-relaxed">
-                  Mares Creativos es una propuesta académica desarrollada como parte de mi proyecto de fin de grado en la escuela de diseño. Consiste en una línea de merchandising diseñada para el Museo Marítimo del Cantábrico, con el objetivo de actualizar y ampliar la oferta de productos en la tienda de recuerdos del museo.
+                  Mares Creativos es una propuesta académica desarrollada como parte de mi proyecto de fin de grado en la escuela de diseño.<br />Consiste en una línea de merchandising diseñada para el Museo Marítimo del Cantábrico, con el objetivo de actualizar y ampliar la oferta de productos en la tienda de recuerdos del museo.
                 </p>
               </div>
             </div>
@@ -73,24 +74,50 @@ const MaresCreativos = () => {
                 El proyecto se basa en siete ilustraciones originales inspiradas en especies del mar Cantábrico y en otras formas de vida marina más universales, incluyendo la característica sardina de dos cabezas que se encuentra entre los objetos de la exposición. Cada ilustración ha sido cuidadosamente creada para reflejar no solo la belleza estética de la fauna y flora marina, sino también para transmitir un mensaje de conservación y respeto hacia los ecosistemas marinos en general.
               </p>
 
-              <div className="w-full max-w-3xl mx-auto">
-                <Carousel className="w-full">
-                  <CarouselContent>
-                    {projectImages.map((image, index) => (
-                      <CarouselItem key={index}>
-                        <div className="p-1">
-                          <img
-                            src={image.src}
-                            alt={image.alt}
-                            className="w-full aspect-[4/3] sm:aspect-video object-cover rounded-lg shadow-xl"
-                          />
+              {/* Slider reemplazando el carrusel */}
+              <div className="mx-auto max-w-3xl relative">
+                <Swiper
+                  modules={[Navigation, Autoplay]}
+                  navigation
+                  autoplay={{ delay: 5000 }}
+                  loop
+                  className="rounded-xl overflow-hidden h-[28rem]"
+                >
+                  {projectImages.map((item, index) => (
+                    <SwiperSlide key={index}>
+                      <div className="relative h-full">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute bottom-0 left-0 right-0 bg-crow-dark/70 p-4">
+                          <h3 className="text-xl font-title text-crow-light">{item.title}</h3>
+                          <p className="text-sm text-crow-text">{item.description}</p>
                         </div>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious />
-                  <CarouselNext />
-                </Carousel>
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+
+                {/* Flechas personalizadas */}
+                <style>
+                  {`
+                    .swiper-button-next,
+                    .swiper-button-prev {
+                      color: white;
+                      top: 50%;
+                      transform: translateY(-50%);
+                      width: 2rem;
+                      height: 2rem;
+                    }
+                    .swiper-button-next::after,
+                    .swiper-button-prev::after {
+                      font-size: 1.5rem;
+                      font-weight: bold;
+                    }
+                  `}
+                </style>
               </div>
 
               <p className="text-base sm:text-lg text-crow-text font-body leading-relaxed">

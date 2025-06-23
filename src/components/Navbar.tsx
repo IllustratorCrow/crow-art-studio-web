@@ -61,6 +61,18 @@ const Navbar = () => {
     setShowSearch(false);
   }, [pathname]);
 
+  // Cierra todo al hacer scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setActiveDropdown(null);
+      setShowSearch(false);
+      setIsMenuOpen(false);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <nav
