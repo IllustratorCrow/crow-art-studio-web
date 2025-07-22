@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
-// Galería de servicios
 const services = [
   {
     title: "Diseño gráfico para publicidad",
@@ -28,7 +28,6 @@ const services = [
   },
 ];
 
-// Últimos trabajos destacados
 const lastWorks = [
   {
     title: "Mares Creativos",
@@ -58,6 +57,20 @@ const lastWorks = [
 
 const Services = () => (
   <div className="pt-16 bg-crow-dark text-white min-h-screen">
+    <Helmet>
+      <title>Servicios de diseño gráfico e ilustración en Cantabria | IllustratorCrow</title>
+      <meta
+        name="description"
+        content="Explora los servicios profesionales de IllustratorCrow en Cantabria: publicidad, ilustración, branding, identidad visual y maquetación editorial."
+      />
+      <meta
+        name="keywords"
+        content="servicios, diseño gráfico, ilustración, branding, identidad visual, maquetación, publicidad, cantabria"
+      />
+      <meta name="robots" content="index, follow" />
+      <meta name="author" content="IllustratorCrow" />
+    </Helmet>
+
     {/* Banner portada */}
     <section className="relative mb-12">
       <img
