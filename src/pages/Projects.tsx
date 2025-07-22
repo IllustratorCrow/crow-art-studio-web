@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import { Helmet } from "react-helmet";
 const projects = [
   {
     title: "Mares Creativos",
@@ -19,6 +19,19 @@ const projects = [
 
 const Projects = () => (
   <div className="pt-16 bg-crow-dark text-white min-h-screen">
+     <Helmet>
+      <title>Proyectos de diseño gráfico e ilustración | IllustratorCrow</title>
+      <meta
+        name="description"
+        content="Explora una selección de proyectos realizados por IllustratorCrow en Cantabria: diseño gráfico, ilustración, merchandising, cartelería y más."
+      />
+      <meta
+        name="keywords"
+        content="proyectos, diseño gráfico, ilustración, cantabria, merchandising, cartelería, publicidad"
+      />
+      <meta name="robots" content="index, follow" />
+      <meta name="author" content="IllustratorCrow" />
+    </Helmet>
     {/* Banner portada */}
     <section className="relative mb-12">
       <img
