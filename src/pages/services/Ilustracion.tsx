@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { ArrowLeft, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const ilustracionProjects = [
   {
@@ -108,6 +109,20 @@ const Ilustracion = () => {
 
   return (
     <div className="pt-16 bg-crow-dark text-white min-h-screen">
+      <Helmet>
+        <title>Ilustración personalizada y arte digital | IllustratorCrow</title>
+        <meta
+          name="description"
+          content="Servicios de ilustración personalizada: retratos de mascotas, diseño de personajes, arte conceptual y más. Estilo único para tus ideas."
+        />
+        <meta
+          name="keywords"
+          content="ilustración, diseño gráfico, arte digital, personajes, mascotas, cantabria, ilustradora, arte personalizado"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="IllustratorCrow" />
+      </Helmet>
+
       {/* Modal */}
       {selectedImage && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">

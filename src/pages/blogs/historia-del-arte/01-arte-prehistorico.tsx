@@ -1,9 +1,24 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Capitulo1 = () => {
   return (
     <div className="flex flex-col min-h-screen bg-crow-dark text-white">
+      <Helmet>
+        <title>Capítulo 1: El Arte Prehistórico | Historia del Arte | IllustratorCrow</title>
+        <meta
+          name="description"
+          content="Descubre el origen de la expresión artística humana a través del arte prehistórico: pintura rupestre, escultura, arquitectura megalítica y más."
+        />
+        <meta
+          name="keywords"
+          content="arte prehistórico, historia del arte, arte rupestre, megalitos, venus paleolítica, altamira, ilustración histórica, cantabria"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="IllustratorCrow" />
+      </Helmet>
+
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full z-50">
         {/* Aquí va tu Navbar */}
@@ -24,14 +39,14 @@ const Capitulo1 = () => {
 
           <div className="relative rounded-lg overflow-hidden shadow-xl mb-12">
             <img
-              src="https://reydekish.com/wp-content/uploads/2015/09/grotta-chauvet-orso1.jpg" // Cambia por una imagen de portada adecuada
+              src="https://reydekish.com/wp-content/uploads/2015/09/grotta-chauvet-orso1.jpg"
               alt="Arte Prehistórico"
               className="w-full h-[50vh] md:h-[60vh] object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-crow-dark/90 to-transparent flex items-center">
               <div className="w-full md:w-1/2 p-4 sm:p-6">
                 <p className="text-base sm:text-lg text-crow-text font-body leading-relaxed">
-                Texto de la cabecera
+                  Texto de la cabecera
                 </p>
               </div>
             </div>
@@ -41,7 +56,6 @@ const Capitulo1 = () => {
         {/* Contenido detallado con degradado */}
         <section className="py-20 bg-gradient-to-b from-crow-dark to-crow-primary rounded-xl">
           <div className="max-w-4xl mx-auto space-y-16">
-            {/* 1. ¿Qué es el arte prehistórico? */}
             <div>
               <h2 className="text-2xl font-semibold mb-4">Subtitulo</h2>
               <p className="text-base sm:text-lg text-crow-text leading-relaxed">
@@ -49,11 +63,9 @@ const Capitulo1 = () => {
               </p>
             </div>
 
-            {/* 3. Manifestaciones artísticas */}
             <div className="space-y-12">
               <h2 className="text-2xl font-semibold">Subtitulo</h2>
 
-              {/* Arte parietal */}
               <div className="flex flex-col md:flex-row items-center gap-8 mb-16">
                 <img
                   src="https://i.imgur.com/Q6YOm4v.jpeg"
@@ -64,12 +76,10 @@ const Capitulo1 = () => {
                   <h3 className="text-xl font-semibold mb-2">Subtitulo</h3>
                   <p className="text-base sm:text-lg text-crow-text leading-relaxed mb-4">
                     Texto con imagen a la izquierda
-                  </p>                 
+                  </p>
                 </div>
               </div>
 
-
-              {/* Arte mobiliar */}
               <div className="flex flex-col md:flex-row-reverse items-center gap-8 mb-16">
                 <img
                   src="https://i.imgur.com/AV7Nnkn.jpeg"
@@ -84,8 +94,6 @@ const Capitulo1 = () => {
                 </div>
               </div>
 
-
-              {/* Escultura prehistórica */}
               <div>
                 <h3 className="text-xl font-semibold mb-2">Escultura prehistórica</h3>
                 <p className="text-base sm:text-lg text-crow-text leading-relaxed mb-4">
@@ -93,7 +101,6 @@ const Capitulo1 = () => {
                 </p>
               </div>
 
-              {/* Arquitectura megalítica */}
               <div>
                 <h3 className="text-xl font-semibold mb-2">Arquitectura megalítica</h3>
                 <p className="text-base sm:text-lg text-crow-text leading-relaxed mb-4">
@@ -107,7 +114,6 @@ const Capitulo1 = () => {
               </div>
             </div>
 
-            {/* 4. Técnicas y materiales */}
             <div>
               <h2 className="text-2xl font-semibold mb-4">4. Técnicas y materiales</h2>
               <p className="text-base sm:text-lg text-crow-text leading-relaxed">
@@ -115,7 +121,6 @@ const Capitulo1 = () => {
               </p>
             </div>
 
-            {/* 5. Interpretaciones */}
             <div>
               <h2 className="text-2xl font-semibold mb-4">5. Interpretaciones</h2>
               <ul className="list-disc pl-6 text-base sm:text-lg text-crow-text leading-relaxed space-y-2">
@@ -126,7 +131,6 @@ const Capitulo1 = () => {
               </ul>
             </div>
 
-            {/* 6. Importancia y legado */}
             <div>
               <h2 className="text-2xl font-semibold mb-4">6. Importancia y legado</h2>
               <p className="text-base sm:text-lg text-crow-text leading-relaxed">

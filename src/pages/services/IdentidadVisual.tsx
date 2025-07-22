@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { ArrowLeft, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const brandingProjects = [
   {
@@ -108,6 +109,20 @@ const IdentidadVisual = () => {
 
   return (
     <div className="pt-16 bg-crow-dark text-white min-h-screen">
+      <Helmet>
+        <title>Identidad Visual y Branding | IllustratorCrow</title>
+        <meta
+          name="description"
+          content="Servicios de identidad visual para marcas: diseño de logotipos, manuales corporativos y papelería. Refuerza tu marca con un diseño coherente y profesional."
+        />
+        <meta
+          name="keywords"
+          content="identidad visual, branding, logotipo, manual corporativo, papelería, diseño gráfico, cantabria"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="IllustratorCrow" />
+      </Helmet>
+
       {/* Modal */}
       {selectedImage && (
         <div
