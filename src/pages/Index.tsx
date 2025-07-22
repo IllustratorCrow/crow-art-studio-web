@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-
+import { Helmet } from 'react-helmet'
 // Constante de SERVICIOS
 const services = [
   {
@@ -67,7 +67,7 @@ const featuredProjects = [
 const colaboradores = [
   {
     name: "Gobierno de Cantabria",
-    logo: "https://i.imgur.com/K3WVRN3.png", 
+    logo: "https://i.imgur.com/K3WVRN3.png",
     link: "https://www.cantabria.es/web/consejeria-de-industria#",
   },
   {
@@ -86,6 +86,19 @@ const colaboradores = [
 const Index = () => {
   return (
     <div className="relative">
+      <Helmet>
+        <title>Diseño Gráfico en Cantabria | IllustratorCrow</title>
+        <meta
+          name="description"
+          content="Diseño gráfico freelance en Cantabria: publicidad, cartelería, identidad visual e ilustración. Servicios profesionales con un enfoque artístico y creativo."
+        />
+        <meta
+          name="keywords"
+          content="diseño, diseño gráfico, cantabria, publicidad, marketing, cartelería, identidad visual, ilustración"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="IllustratorCrow" />
+      </Helmet>
       {/* Banner */}
       <section
         className="bg-crow-dark text-crow-text min-h-[80vh] flex items-center bg-cover bg-center bg-no-repeat relative"
@@ -142,7 +155,7 @@ const Index = () => {
         </div>
       </section>
 
-          
+
       {/* Novedades (Slider) */}
       <section className="py-16 sm:py-20 bg-gradient-to-b from-crow-primary to-crow-dark">
         <div className="container mx-auto px-4">

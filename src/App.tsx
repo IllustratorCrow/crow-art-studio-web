@@ -3,7 +3,7 @@ import Index from "./pages/Index";
 import Projects from "./pages/Projects";
 import MaresCreativos from "./pages/projects/MaresCreativos";
 import VidaBesaya from "./pages/projects/VidaBesaya";
-
+import { Helmet } from 'react-helmet'
 import Services from "./pages/Services";
 import DisenoPublicitario from "./pages/services/DisenoPublicitario";
 import Ilustracion from "./pages/services/Ilustracion";
@@ -37,38 +37,45 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <HashRouter>
+        <Helmet>
+          <meta charSet='utf-8' />
+          <title>IllustratorCrow | Diseño gráfico, publicidad y cartelería en Cantabria</title>
+          <meta
+            name='description'
+            content='Estudio de diseño gráfico en Cantabria. Publicidad, cartelería, marketing visual, identidad e ilustración.'
+          />
+          <meta name='keywords' content='diseño, diseño gráfico, cantabria, publicidad, marketing, cartelería' />
+          <meta name='author' content='IllustratorCrow' />
+          <meta name='robots' content='index, follow' />
+        </Helmet>
         <ScrollToTop />
         <Navbar />
         <Routes>
           {/* Rutas principales */}
-          <Route path="/" element={<Index />} />
-          <Route path="/proyectos" element={<Projects />} />
-          <Route path="/proyectos/mares-creativos" element={<MaresCreativos />} />
-          <Route path="/proyectos/vida-besaya" element={<VidaBesaya />} />
-          <Route path="/servicios" element={<Services />} />
-
+          <Route path='/' element={<Index />} />
+          <Route path='/proyectos' element={<Projects />} />
+          <Route path='/proyectos/mares-creativos' element={<MaresCreativos />} />
+          <Route path='/proyectos/vida-besaya' element={<VidaBesaya />} />
+          <Route path='/servicios' element={<Services />} />
           {/* Rutas de servicios */}
-          <Route path="/servicios/diseno-publicitario" element={<DisenoPublicitario />} />
-          <Route path="/servicios/ilustracion" element={<Ilustracion />} />
-          <Route path="/servicios/identidad-visual" element={<IdentidadVisual />} />
-          <Route path="/servicios/diseno-editorial" element={<DisenoEditorial />} />
-
+          <Route path='/servicios/diseno-åpublicitario' element={<DisenoPublicitario />} />
+          <Route path='/servicios/ilustracion' element={<Ilustracion />} />
+          <Route path='/servicios/identidad-visual' element={<IdentidadVisual />} />
+          <Route path='/servicios/diseno-editorial' element={<DisenoEditorial />} />
           {/* Rutas de blogs */}
-          <Route path="/blogs/historia-del-arte" element={<HistoriaDelArteIndex />} />
-          <Route path="/blogs/historia-del-arte/01-arte-prehistorico" element={<Capitulo1 />} />
-
+          <Route path='/blogs/historia-del-arte' element={<HistoriaDelArteIndex />} />
+          <Route path='/blogs/historia-del-arte/01-arte-prehistorico' element={<Capitulo1 />} />
           {/* Ruta de búsqueda */}
-          <Route path="/buscar" element={<Buscar />} /> {/* ✅ Correcta */}
-
+          <Route path='/buscar' element={<Buscar />} /> {/* ✅ Correcta */}
           {/* Otras rutas */}
-          <Route path="/contacto" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path='/contacto' element={<Contact />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </HashRouter>
       <Toaster />
       <Sonner />
     </TooltipProvider>
   </QueryClientProvider>
-);
+)
 
 export default App;

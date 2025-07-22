@@ -2,6 +2,7 @@ import { useLocation, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { contenidoBuscable } from "@/data/contenidoBuscable";
 import { Search } from "lucide-react";
+import { Helmet } from 'react-helmet';
 
 const Buscar = () => {
   const location = useLocation();
@@ -22,10 +23,24 @@ const Buscar = () => {
   }, [location.search]);
 
   return (
+    <>
+    <Helmet>
+        <title>Buscar contenido | IllustratorCrow</title>
+        <meta
+          name="description"
+          content="Resultados de búsqueda relacionados con diseño gráfico, publicidad, marketing y cartelería en Cantabria."
+        />
+        <meta
+          name="keywords"
+          content="buscar, resultados, diseño, diseño gráfico, publicidad, marketing, cartelería, Cantabria"
+        />
+        <meta name="robots" content="noindex, follow" />
+        <meta name="author" content="IllustratorCrow" />
+      </Helmet>
     <section
       className="min-h-screen bg-cover bg-center relative"
       style={{ backgroundImage: 'url("https://i.imgur.com/Zz1JpiE.jpeg")' }}
-    >
+      >
       {/* Capa oscura con blur */}
       <div className="absolute inset-0 bg-crow-dark/80 backdrop-blur-sm" />
 
@@ -38,9 +53,9 @@ const Buscar = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {resultados.map((item, index) => (
               <Link
-                key={index}
-                to={item.url}
-                className="group p-6 bg-white/10 hover:bg-white/20 border border-white/10 rounded-xl transition-all shadow-lg backdrop-blur-md"
+              key={index}
+              to={item.url}
+              className="group p-6 bg-white/10 hover:bg-white/20 border border-white/10 rounded-xl transition-all shadow-lg backdrop-blur-md"
               >
                 <div className="flex items-center gap-4 mb-2">
                   <div className="text-crow-light bg-crow-primary/70 p-2 rounded-full">
@@ -64,6 +79,7 @@ const Buscar = () => {
         )}
       </div>
     </section>
+    </>
   );
 };
 
