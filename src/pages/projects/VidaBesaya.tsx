@@ -7,6 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Helmet } from "react-helmet";
 
 const VidaBesaya = () => {
   const projectImages = [
@@ -26,14 +27,25 @@ const VidaBesaya = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-crow-dark text-white">
-      {/* Navbar */}
+      <Helmet>
+        <title>La Vida del Besaya | Proyecto informativo y visual | IllustratorCrow</title>
+        <meta
+          name="description"
+          content="Proyecto de diseño gráfico e infografía sobre la senda fluvial del Besaya. Un recorrido visual por su historia, fauna y flora, resaltando su valor natural y cultural."
+        />
+        <meta
+          name="keywords"
+          content="la vida del besaya, senda fluvial, infografía, diseño gráfico, cantabria, paneles informativos, ilustración, conservación"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="IllustratorCrow" />
+      </Helmet>
+
       <nav className="fixed top-0 left-0 w-full z-50">
         {/* Aquí va tu Navbar */}
       </nav>
 
-      {/* Contenido principal */}
       <main className="flex-grow container max-w-7xl mx-auto px-4 py-8 mt-20">
-        {/* Título y descripción */}
         <section className="py-0">
           <Link
             to="/proyectos"
@@ -46,8 +58,8 @@ const VidaBesaya = () => {
           <h1 className="text-3xl sm:text-4xl font-title mb-8">La vida del Besaya</h1>
 
           <div className="relative rounded-lg overflow-hidden shadow-xl mb-12">
-            <img 
-              src="https://i.imgur.com/SLAscDB.jpeg" 
+            <img
+              src="https://i.imgur.com/SLAscDB.jpeg"
               alt="La vida del Besaya - Portada"
               className="w-full h-[50vh] md:h-[60vh] object-cover object-[30%_15%]"
             />
@@ -61,7 +73,6 @@ const VidaBesaya = () => {
           </div>
         </section>
 
-        {/* Detalles del proyecto */}
         <section className="py-20 bg-gradient-to-b from-crow-dark to-crow-primary rounded-xl">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto space-y-12">
@@ -69,8 +80,8 @@ const VidaBesaya = () => {
                 Proyecto aún en desarrollo.
               </p>
 
-              {/* Carrusel opcional (si decides activarlo más adelante) */}
-              {/* 
+              {/* Carrusel opcional */}
+              {/*
               <div className="w-full max-w-3xl mx-auto">
                 <Carousel className="w-full">
                   <CarouselContent>

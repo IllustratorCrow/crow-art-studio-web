@@ -2,6 +2,7 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
+import { Helmet } from "react-helmet";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -10,35 +11,47 @@ const MaresCreativos = () => {
     {
       image: "https://i.imgur.com/Y5QhRa5.jpeg",
       title: "",
-      description: "Totebag | Illustración de Ballena"
+      description: "Totebag | Ilustración de Ballena",
     },
     {
       image: "https://i.imgur.com/3l6KQN2.jpeg",
       title: "",
-      description: "Packaging | Illustración de Sardina de dos cabezas"
+      description: "Packaging | Ilustración de Sardina de dos cabezas",
     },
     {
       image: "https://i.imgur.com/5LIdjKD.jpeg",
       title: "",
-      description: "Taza | Illustración de Tiburón ballena"
+      description: "Taza | Ilustración de Tiburón ballena",
     },
     {
       image: "https://i.imgur.com/e44WMIP.jpeg",
       title: "",
-      description: "Gorro de pesca | Illustración de pulpo y de cangrejo"
-    }
+      description: "Gorro de pesca | Ilustración de pulpo y de cangrejo",
+    },
   ];
 
   return (
     <div className="flex flex-col min-h-screen bg-crow-dark text-white">
+      <Helmet>
+        <title>Mares Creativos | Proyecto de diseño gráfico | IllustratorCrow</title>
+        <meta
+          name="description"
+          content="Mares Creativos es un proyecto de merchandising ilustrado para el Museo Marítimo del Cantábrico. Una propuesta de diseño gráfico académico con enfoque artístico y ecológico."
+        />
+        <meta
+          name="keywords"
+          content="mares creativos, diseño gráfico, ilustración, merchandising, museo marítimo, cantabria, proyecto, branding"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="IllustratorCrow" />
+      </Helmet>
+
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full z-50">
         {/* Aquí va tu Navbar */}
       </nav>
 
-      {/* Contenido principal */}
       <main className="flex-grow container max-w-7xl mx-auto px-4 py-8 mt-20">
-        {/* Título y descripción */}
         <section className="py-0">
           <Link
             to="/proyectos"
@@ -59,14 +72,15 @@ const MaresCreativos = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-crow-dark/90 to-transparent flex items-center">
               <div className="w-full md:w-1/2 p-4 sm:p-6">
                 <p className="text-base sm:text-lg text-crow-text font-body leading-relaxed">
-                  Mares Creativos es una propuesta académica desarrollada como parte de mi proyecto de fin de grado en la escuela de diseño.<br />Consiste en una línea de merchandising diseñada para el Museo Marítimo del Cantábrico, con el objetivo de actualizar y ampliar la oferta de productos en la tienda de recuerdos del museo.
+                  Mares Creativos es una propuesta académica desarrollada como parte de mi proyecto de fin de grado en la escuela de diseño.
+                  <br />
+                  Consiste en una línea de merchandising diseñada para el Museo Marítimo del Cantábrico, con el objetivo de actualizar y ampliar la oferta de productos en la tienda de recuerdos del museo.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Detalles del proyecto */}
         <section className="py-20 bg-gradient-to-b from-crow-dark to-crow-primary rounded-xl">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto space-y-12">
@@ -74,7 +88,6 @@ const MaresCreativos = () => {
                 El proyecto se basa en siete ilustraciones originales inspiradas en especies del mar Cantábrico y en otras formas de vida marina más universales, incluyendo la característica sardina de dos cabezas que se encuentra entre los objetos de la exposición. Cada ilustración ha sido cuidadosamente creada para reflejar no solo la belleza estética de la fauna y flora marina, sino también para transmitir un mensaje de conservación y respeto hacia los ecosistemas marinos en general.
               </p>
 
-              {/* Slider reemplazando el carrusel */}
               <div className="mx-auto max-w-3xl relative">
                 <Swiper
                   modules={[Navigation, Autoplay]}
@@ -88,7 +101,7 @@ const MaresCreativos = () => {
                       <div className="relative h-full">
                         <img
                           src={item.image}
-                          alt={item.title}
+                          alt={item.title || item.description}
                           className="w-full h-full object-cover"
                         />
                         <div className="absolute bottom-0 left-0 right-0 bg-crow-dark/70 p-4">
@@ -100,7 +113,6 @@ const MaresCreativos = () => {
                   ))}
                 </Swiper>
 
-                {/* Flechas personalizadas */}
                 <style>
                   {`
                     .swiper-button-next,

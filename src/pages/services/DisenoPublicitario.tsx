@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { ArrowLeft, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const carteleriaProjects = [
   {
@@ -117,7 +118,20 @@ const DisenoPublicitario = () => {
 
   return (
     <div className="pt-16 bg-crow-dark text-white min-h-screen">
-      {/* Modal */}
+      <Helmet>
+        <title>Diseño Publicitario | Carteles, Flyers y más | IllustratorCrow</title>
+        <meta
+          name="description"
+          content="Descubre proyectos de diseño publicitario realizados por IllustratorCrow: carteles, flyers, banners y formatos promocionales para marcas en Cantabria."
+        />
+        <meta
+          name="keywords"
+          content="diseño publicitario, cartelería, flyers, banners, publicidad, marketing, diseño gráfico, cantabria"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="IllustratorCrow" />
+      </Helmet>
+
       {selectedImage && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
           <div className="relative bg-crow-dark rounded-xl shadow-2xl p-4 max-w-sm w-full mx-4">
@@ -136,7 +150,6 @@ const DisenoPublicitario = () => {
         </div>
       )}
 
-      {/* Volver */}
       <section className="py-8 container mx-auto px-4">
         <Link
           to="/servicios"
@@ -147,7 +160,6 @@ const DisenoPublicitario = () => {
         </Link>
       </section>
 
-      {/* Título */}
       <section className="container mx-auto px-4">
         <div className="relative mb-12">
           <img
@@ -166,7 +178,6 @@ const DisenoPublicitario = () => {
         </div>
       </section>
 
-      {/* Galería Cartelería */}
       <section className="py-16 sm:py-20 bg-gradient-to-b from-crow-dark to-crow-primary">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-title text-crow-text mb-12">Proyectos de Cartelería</h2>
@@ -174,7 +185,6 @@ const DisenoPublicitario = () => {
         </div>
       </section>
 
-      {/* Galería Otros formatos */}
       <section className="py-16 sm:py-20 bg-gradient-to-b from-crow-primary to-crow-dark">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-title text-crow-text mb-12">Otros formatos publicitarios</h2>

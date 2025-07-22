@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { ArrowLeft, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const editorialProjects = [
   {
@@ -96,6 +97,20 @@ const DisenoEditorial = () => {
 
   return (
     <div className="pt-16 bg-crow-dark text-white min-h-screen">
+      <Helmet>
+        <title>Diseño Editorial | Maquetación y publicaciones | IllustratorCrow</title>
+        <meta
+          name="description"
+          content="Servicios de diseño editorial: maquetación profesional de libros, portadas, revistas y catálogos. Proyectos visuales pensados para impresionar y comunicar con claridad."
+        />
+        <meta
+          name="keywords"
+          content="diseño editorial, maquetación, libros, portadas, catálogos, revistas, diseño gráfico, cantabria"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="IllustratorCrow" />
+      </Helmet>
+
       {/* Modal */}
       {selectedImage && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
